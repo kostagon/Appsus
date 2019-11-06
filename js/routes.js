@@ -30,9 +30,6 @@ const routes = [{
                 component: bookAdd
             }
         ]
-    },
-    {
-
     }
 ]
 
