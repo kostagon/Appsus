@@ -14,7 +14,7 @@ export default {
         }
     },
     created() {
-        this.aboutInterval = setInterval(() => console.log('Reading the about page...'), 1000);
+        // this.aboutInterval = setInterval(() => console.log('Reading the about page...'), 1000);
     },
     destroyed() {
         clearInterval(this.aboutInterval)
