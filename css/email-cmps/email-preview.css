@@ -2,9 +2,11 @@
     background-blend-mode: color-burn;
     background-color: white;
     border-bottom: 1px solid black;
+    padding-right: 7px;
+    padding-left: 7px;
 }
 .email-preview-container:hover {
-    background-color: lightgray;
+    background-color: #88d8d1;
 }
 
 .isBold {
