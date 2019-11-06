@@ -1,7 +1,7 @@
 'use strict';
 
-import {bookService} from '../../services/book.service.js';
-import {eventBus} from '../../services/eventbus-service.js';
+import {bookService} from '../book.service.js';
+import {eventBus} from '../../../services/eventbus-service.js';
 
 export default {
     name: 'book-add',
