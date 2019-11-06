@@ -1,9 +1,9 @@
 'use strict';
 
-import {bookService} from '../../services/book.service.js';
-import '../../cmps/books-cmps/long-text.cmp.js';
-import {eventBus} from '../../services/eventbus-service.js';
-import reviewAdd from '../../cmps/books-cmps/review-add.cmp.js'
+import {bookService} from '../book.service.js';
+import '../books-cmps/long-text.cmp.js';
+import {eventBus} from '../../../services/eventbus-service.js';
+import reviewAdd from '../books-cmps/review-add.cmp.js'
 
 export default {
     name: 'book-details',

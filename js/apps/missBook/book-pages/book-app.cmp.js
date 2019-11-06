@@ -1,9 +1,9 @@
 'use strict';
 
-import {bookService} from '../../services/book.service.js'
+import {bookService} from '../book.service.js'
 
-import bookFilter from '../../cmps/books-cmps/book-filter.cmp.js';
-import bookList from '../../cmps/books-cmps/book-list.cmp.js';
+import bookFilter from '../books-cmps/book-filter.cmp.js';
+import bookList from '../books-cmps/book-list.cmp.js';
 
 export default {
     name: 'book-app',
