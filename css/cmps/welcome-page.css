@@ -1,0 +1,11 @@
+.welcome-page-container img {
+    width: 100%;
+}
+
+.welcome-page-container h1 {
+    position: absolute;
+    top: 220px;
+    right: 180px;
+    color: #e7ece2;
+    font-size: 75px;
+}

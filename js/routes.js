@@ -1,9 +1,10 @@
 
-import bookApp from './pages/book-app.cmp.js';
+import bookApp from './pages/book-pages/book-app.cmp.js';
 import welcomePage from './pages/welcome-page.cmp.js';
 import aboutPage from './pages/about-page.cmp.js';
-import bookDetails from './pages/book-details.cmp.js';
-import bookAdd from './pages/book-add.cmp.js';
+import bookDetails from './pages/book-pages/book-details.cmp.js';
+import bookAdd from './pages/book-pages/book-add.cmp.js';
+import keepApp from './pages/keep-pages/keep-app.cmp.js';
 
 
 const routes = [

@@ -1,0 +1,123 @@
+.book-details-container .book-details {
+    padding: 10px 50px;
+    margin-bottom: 18px;
+}
+
+.book-details-container ul {
+    padding: 0;
+}
+
+.book-details-container .reviews {
+    width: 90%;
+    margin-top: 15px;
+}
+
+.book-details-container .reviews .name {
+    color: #35877c;
+    margin: 10px;
+}
+
+.book-details-container .reviews .txt {
+    width: 100%;
+}
+
+.book-details-container .reviews .txt span {
+    color: #696969;
+}
+
+.book-details-container li {
+    color: #35877c;
+    border: 1px solid #d0d0d0;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.book-details-container .remove-btn {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    position: absolute;
+    top: 30px;
+    left: 20px;
+    outline: none;
+}
+
+.book-details-container .info {
+    margin-left: 30px;
+    width: 450px;
+}
+
+.book-details-container .reviews .info {
+    margin-left: 30px;
+    width: 160px;
+}
+
+.book-details-container h3 {
+    color: #1c847b;
+    font-size: 25px;
+    margin: 10px 0;
+}
+
+.book-details-container h4, .book-details-container p {
+    color: #424242;
+}
+
+.book-details-container span {
+    font-weight: normal;
+    margin-left: 10px;
+    color: black;
+    font-size: 16px;
+}
+
+.book-details-container img {
+    margin: 50px 40px 0 0;
+    height: 300px;
+    border-radius: 10px;
+    align-self: flex-start;
+}
+
+.book-details-container p {
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.book-details-container .reading-lvl {
+    color: #35877c;
+}
+
+.book-details-container .book-condition {
+    color: #616161;
+    font-weight: normal;
+}
+
+.book-details-container .close-btn {
+    font-size: 30px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: transparent;
+    border: none;
+    color: #35877c;
+    cursor: pointer;
+    outline: none;
+}
+
+.book-details-container p.red {
+    color: red;
+}
+
+.book-details-container p.green {
+    color: green;
+}
+
+.book-details-container span.sale {
+    color: #1c847b;
+    font-size: 1.3em;
+}
+
+.book-details-container .navigate {
+    width: 100%;
+    padding: 15px 25px 0;
+    color: #35877c;
+    font-weight: bold;
+}

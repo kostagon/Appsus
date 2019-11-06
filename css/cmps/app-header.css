@@ -1,0 +1,21 @@
+
+.app-header-container {
+    padding: 0 25px;
+    background-color: #fff;
+    border-bottom: 3px solid #cbd0d0;
+}
+
+.app-header-container nav > * {
+    color: black;
+    margin-left: 40px;
+    font-size: 20px;
+}
+
+.app-header-container .router-link-active {
+    color: #1c847b;
+    font-weight: bold;
+}
+
+.app-header-container nav > *:hover {
+    color: #1c847b;
+}

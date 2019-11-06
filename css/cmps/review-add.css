@@ -1,0 +1,66 @@
+.review-add-container h2 {
+    display: inline-block;
+    margin: 0;
+    margin-right: 15px;
+    font-size: 20px;
+    color: #1d9389;
+    margin-left: 25px;
+    font-size: 23px;
+    margin-right: 0;
+    width: 190px;
+}
+
+.review-add-container .date-input {
+    width: 150px;
+}
+
+.review-add-container form {
+    margin: 3px 20px 0;
+    width: 750px;
+}
+
+.review-add-container input, .review-add-container select, .review-add-container textarea {
+    outline: none;
+    border-radius: 5px;
+    padding: 7px;
+    margin: 5px 15px 10px 5px;
+    width: 120px;
+    border: none;
+}
+
+.review-add-container textarea {
+    width: 250px;
+    margin-left: 10px;
+}
+
+.review-add-container .rate-btn {
+    font-size: 25px;
+    font-weight: bold;
+    padding: 0;
+    margin-bottom: 3px;
+    margin-left: 8px;
+    background-color: transparent;
+}
+
+.review-add-container .rate-btn:hover, .review-add-container .rate-btn.marked {
+    color: #36a097;
+}
+
+.review-add-container .rate {
+    margin: 5px 15px 10px 5px;
+}
+
+.review-add-container button {
+    background-color: #36a097;
+    padding: 7px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    color: white;
+    margin-left: 15px;
+}
+
+.review-add-container {
+    width: 100%;
+    background-color: #cbd0d0;
+}

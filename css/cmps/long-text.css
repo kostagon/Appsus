@@ -1,0 +1,20 @@
+.long-text-container p{
+    font-weight: normal;
+    margin: 10px 0 2px;
+    display: inline;
+}
+
+.long-text-container {
+    display: inline;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.long-text-container button {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid gray;
+    outline: none;
+    color: gray;
+    cursor: pointer;
+}

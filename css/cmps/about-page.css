@@ -1,0 +1,13 @@
+.about-page-container {
+    max-width: 800px;
+    margin: 50px auto;
+    font-size: 20px;
+}
+
+.about-page-container img {
+    height: 300px;
+    width: 300px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 25px;
+}
