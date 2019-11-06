@@ -60,7 +60,6 @@ function getNearBooksIds(bookId) {
   return {prev, next};
 }
 
-// function queryBooks(query) {
 function getSearchedBooks(searched) {
   return axios.get(`https://www.googleapis.com/books/v1/volumes?q=${searched}&key=AIzaSyCw8djD1Hif_FagSIHuaLdcPXB-KgWGiiw`)
     .then(res => {

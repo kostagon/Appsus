@@ -1,0 +1,10 @@
+.note-card {
+    background-color: lightcyan;
+    max-width: 150px;
+    padding: 15px;
+    margin: 15px;
+}
+
+.note-card img {
+    width: 100%;
+}

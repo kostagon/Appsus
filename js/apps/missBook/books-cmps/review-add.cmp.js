@@ -40,7 +40,7 @@ export default {
     methods: {
         onSubmit() {
             let review = {...this.review};
-            console.log(review);
+            // console.log(review);
             this.$emit('reviewed', review);
             this.review = {name: 'Books Reader', rate: 0, readAt: this.defaultDate, txt:'Good book!'}
         },
