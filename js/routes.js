@@ -1,4 +1,3 @@
-
 import bookApp from './apps/missBook/book-pages/book-app.cmp.js';
 import welcomePage from './pages/welcome-page.cmp.js';
 import aboutPage from './pages/about-page.cmp.js';
@@ -23,13 +22,17 @@ const routes = [{
         path: '/book',
         component: bookApp,
         children: [{
-            path: '/:id',
-            component: bookDetails
-        }]
+                path: '/:id',
+                component: bookDetails
+            },
+            {
+                path: '/add',
+                component: bookAdd
+            }
+        ]
     },
     {
-        path: '/add',
-        component: bookAdd
+
     }
 ]
 
