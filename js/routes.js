@@ -1,4 +1,3 @@
-
 import bookApp from './pages/book-pages/book-app.cmp.js';
 import welcomePage from './pages/welcome-page.cmp.js';
 import aboutPage from './pages/about-page.cmp.js';
@@ -7,8 +6,7 @@ import bookAdd from './pages/book-pages/book-add.cmp.js';
 import keepApp from './pages/keep-pages/keep-app.cmp.js';
 
 
-const routes = [
-    {
+const routes = [{
         path: '/',
         component: welcomePage
     },
@@ -22,18 +20,24 @@ const routes = [
     },
     {
         path: '/book',
-        component: bookApp
+        component: bookApp,
+        children: [{
+            path: '/:id',
+            component: bookDetails
+        }]
     },
-    {
-        path: '/book/:id',
-        component: bookDetails
-    },
+    // {
+    //     path: '/book/:id',
+    //     component: bookDetails
+    // },
     {
         path: '/add',
         component: bookAdd
     }
 ]
 
-const router = new VueRouter({ routes })
+const router = new VueRouter({
+    routes
+})
 
 export default router;
