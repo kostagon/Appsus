@@ -2,6 +2,10 @@
 
 /* helpers */
 
+.container {
+    text-align: center;
+}
+
 .flex {
     display: flex;
 }
