@@ -47,3 +47,21 @@
 .hidden {
     visibility: hidden;
 }
+
+.inline-block {
+    display: inline-block;
+}
+
+.gap {
+    margin: 15px;
+}
+
+.float-right {
+    margin-right: 5px;
+    margin-top: 5px;
+    float:right;
+}
+
+.margin-center {
+    margin: 0 auto;
+}

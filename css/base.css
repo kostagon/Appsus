@@ -36,3 +36,8 @@ h3 {
 input, button, textarea, select {
     outline: none;
 }
+
+button{
+    color: red;
+    background-color: #fff;
+}

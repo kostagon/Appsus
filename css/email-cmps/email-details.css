@@ -1,0 +1,12 @@
+.email-details-container {
+    width: 600px;
+    height: 400px;
+    background-color: white;
+    border: 1px solid black;
+    font-weight: 700;
+}
+
+.email-details-container > p {
+    text-decoration-line: underline;
+    padding-bottom: 20px;
+}

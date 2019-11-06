@@ -1,0 +1,12 @@
+.email-preview-container {
+    background-blend-mode: color-burn;
+    background-color: white;
+    border-bottom: 1px solid black;
+}
+.email-preview-container:hover {
+    background-color: lightgray;
+}
+
+.isBold {
+    font-weight: 800;
+}
