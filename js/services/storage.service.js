@@ -13,5 +13,4 @@ function store(key, value) {
 export const storageService = {
     load,
     store
-
 }

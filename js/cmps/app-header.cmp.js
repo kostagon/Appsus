@@ -8,9 +8,9 @@ export default {
             <nav>
                 <router-link exact to="/">Home</router-link>
                 <router-link exact to="/about">About</router-link>
-                <router-link exact to="/book">Books</router-link>
-                <router-link exact to="/keep">KeepApp</router-link>
-                <router-link exact to="/email">Email</router-link>
+                <router-link exact to="/book">Miss Books</router-link>
+                <router-link exact to="/keep">Miss Keep</router-link>
+                <router-link exact to="/email">Mister Email</router-link>
             </nav>
         </section>
     `

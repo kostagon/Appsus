@@ -4,19 +4,36 @@
 
 
 /* Components Styling: */
-@import './cmps/book-details.css';
-@import './cmps/book-preview.css';
-@import './cmps/book-filter.css';
-@import './cmps/review-add.css';
-@import './cmps/long-text.css';
+
+/* main */
 @import './cmps/app-header.css';
 @import './cmps/user-msg.css';
 @import './cmps/welcome-page.css';
 @import './cmps/about-page.css';
-@import './cmps/book-app.css';
-@import './cmps/book-add.css';
+
 /* Email components */
 
 @import './email-cmps/email-main.css';
 @import './email-cmps/email-preview.css';
 @import './email-cmps/email-details.css';
+
+/* books */
+@import './cmps/book-cmps/book-details.css';
+@import './cmps/book-cmps/book-preview.css';
+@import './cmps/book-cmps/book-filter.css';
+@import './cmps/book-cmps/review-add.css';
+@import './cmps/book-cmps/long-text.css';
+@import './cmps/book-cmps/book-app.css';
+@import './cmps/book-cmps/book-add.css';
+
+/* notes */
+@import './cmps/notes-cmps/notes-app.css';
+@import './cmps/notes-cmps/notes-search.css';
+
+@import './cmps/notes-cmps/note-add.css';
+
+@import './cmps/notes-cmps/txt-note.css';
+
+@import './cmps/notes-cmps/note-container.css';
+
+@import './cmps/notes-cmps/note-card.css';
