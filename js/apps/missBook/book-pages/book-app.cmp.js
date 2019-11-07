@@ -1,6 +1,6 @@
 'use strict';
 
-import {bookService} from '../book.service.js'
+import { bookService } from '../book.service.js'
 
 import bookFilter from '../books-cmps/book-filter.cmp.js';
 import bookList from '../books-cmps/book-list.cmp.js';
@@ -11,10 +11,11 @@ export default {
         <section class="book-app-container">
             <book-filter @filtered="setFilter"></book-filter> 
             <router-link to="/add" class="add-book-btn">Add Book</router-link>
+            <router-view></router-view>
             <book-list :books="booksToShow" @selected="selectBook"></book-list>
         </section>
     `,
-    data(){
+    data() {
         return {
             books: [],
             filterBy: null,
@@ -24,13 +25,12 @@ export default {
     methods: {
         selectBook(bookId) {
             bookService.getBookById(bookId)
-                .then(book => this.selectedBook = book)
+                .then(book => {
+                    this.selectedBook = book
+                })
         },
         setFilter(filter) {
             this.filterBy = filter;
-        },
-        hideDetails() {
-            this.selectedBook = null;
         }
     },
     computed: {
@@ -40,8 +40,7 @@ export default {
             return this.books.filter(book => {
                 let bookPrice = book.listPrice.amount;
                 return regex.test(book.title) && bookPrice > this.filterBy.fromPrice && bookPrice < this.filterBy.toPrice
-            }
-            )
+            })
         }
     },
     created() {
@@ -53,5 +52,3 @@ export default {
         bookList
     }
 }
-
-

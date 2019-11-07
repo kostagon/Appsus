@@ -1,8 +1,8 @@
 'use strict';
 
-import {bookService} from '../book.service.js';
+import { bookService } from '../book.service.js';
 import '../books-cmps/long-text.cmp.js';
-import {eventBus} from '../../../services/eventbus-service.js';
+import { eventBus } from '../../../services/eventbus-service.js';
 import reviewAdd from '../books-cmps/review-add.cmp.js'
 
 export default {
@@ -62,9 +62,9 @@ export default {
             if (yearsPassed < 1) return 'New!';
         },
         priceClass() {
-            return { 
-                'red': this.book.listPrice.amount > 150, 
-                'green': this.book.listPrice.amount < 20 
+            return {
+                'red': this.book.listPrice.amount > 150,
+                'green': this.book.listPrice.amount < 20
             };
         }
     },
@@ -75,7 +75,6 @@ export default {
                 .then(book => {
                     this.book = book;
                     this.nearBooksIds = bookService.getNearBooksIds(book.id);
-                    console.log('this.nearBooksIds', this.nearBooksIds);
                 })
         },
         addReview(review) {
@@ -97,22 +96,22 @@ export default {
                 })
         },
         removeReview(reviewId) {
-            bookService.removeReview(this.book ,reviewId)
-            .then(book => {
-                this.book = book
-                const msg = {
-                    txt: `This review was successfully removed!`,
-                    type: 'success'
-                }
-                eventBus.$emit('show-msg', msg);
-            })
-            .catch(err => {
-                const msg = {
-                    txt: `Something went wrong! (${err})`,
-                    type: 'error'
-                }
-                eventBus.$emit('show-msg', msg);
-            })
+            bookService.removeReview(this.book, reviewId)
+                .then(book => {
+                    this.book = book
+                    const msg = {
+                        txt: `This review was successfully removed!`,
+                        type: 'success'
+                    }
+                    eventBus.$emit('show-msg', msg);
+                })
+                .catch(err => {
+                    const msg = {
+                        txt: `Something went wrong! (${err})`,
+                        type: 'error'
+                    }
+                    eventBus.$emit('show-msg', msg);
+                })
         }
     },
     created() {

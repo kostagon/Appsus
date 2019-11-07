@@ -8,8 +8,10 @@ export default {
     template: `
     <section class="book-list-container">
         <ul class="clean-list flex wrap justify-center align-center">
+        
             <book-preview v-for="currBook in books" :book="currBook" @click.native="onSelectBook(currBook.id)" :key="currBook.id">
             </book-preview>
+            
         </ul>
     </section>
     `,
@@ -28,5 +30,3 @@ export default {
         bookPreview
     }
 }
-
-
