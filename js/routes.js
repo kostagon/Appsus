@@ -43,14 +43,14 @@ const routes = [{
         path: '/book',
         component: bookApp,
         children: [{
-                path: '/:id',
+                path: ':id',
                 component: bookDetails
-            },
-            {
-                path: '/add',
-                component: bookAdd
             }
         ]
+    },
+    {
+        path: '/add',
+        component: bookAdd
     }
 ]
 
