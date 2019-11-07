@@ -2,7 +2,7 @@ export default {
     props: ['email'],
     name: 'email-preview',
     template: `
-         <router-link :to="emailDetailsLink" v-bind:class="classObject">
+         <router-link exact :to="emailDetailsLink" v-bind:class="classObject">
             <section class="email-preview-container flex align-center space-between">
                 <p>Subject: {{email.subject}}</p>
                 <p>Mail body: {{email.body}}</p>
@@ -12,7 +12,7 @@ export default {
     `,
     computed: {
         createdTimeToStr() {
-            let date = new Date(this.email.sentAt);
+            let date = new Date(this.email.createdAt);
             let day = date.getDate();
             let month = date.getMonth();
             let year = date.getFullYear();

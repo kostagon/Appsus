@@ -13,9 +13,12 @@
 
 /* Email components */
 
-@import './email-cmps/email-main.css';
-@import './email-cmps/email-preview.css';
-@import './email-cmps/email-details.css';
+@import './cmps/email-cmps/side-bar.css';
+@import './cmps/email-cmps/email-compose.css';
+@import './cmps/email-cmps/email-list.css';
+@import './cmps/email-cmps/email-preview.css';
+@import './cmps/email-cmps/email-details.css';
+
 
 /* books */
 @import './cmps/book-cmps/book-details.css';
