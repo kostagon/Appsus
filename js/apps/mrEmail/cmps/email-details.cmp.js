@@ -1,7 +1,7 @@
 import {
     emailService
-} from '../services/email.service.js'
-// import {eventBus} from '../services/event-bus.service.js';
+} from '../services/email.service.js';
+
 
 export default {
     name: 'email-details',
@@ -11,11 +11,11 @@ export default {
         }
     },
     template: `
-        <section v-if="email" class="email-details-container margin-center">
+        <section v-if="email" class="email-details-container margin-center box-shadow">
             <button @click="removeEmail(email.id)" class="float-right"> x </button>
-            <p>Subject: {{email.subject}} <span v-show="isRead">✓</span></p>
+            <p>Subject: {{email.subject}}</p>
             <p>Mail body: {{email.body}}</p>
-            <p>Sent at: {{createdTimeToStr}}</p>
+            <p>Created on: {{createdTimeToStr}}</p>
         </section>
     `,
     methods: {
@@ -36,7 +36,7 @@ export default {
     },
     computed: {
         createdTimeToStr() {
-            let date = new Date(this.email.sentAt);
+            let date = new Date(this.email.createdAt);
             let day = date.getDate();
             let month = date.getMonth();
             let year = date.getFullYear();
@@ -51,7 +51,7 @@ export default {
         }
     },
     created() {
-        console.log(this.$route.params.id);
+        emailService.updateRead(this.$route.params.id)
         this.loadMail();
     }
 }

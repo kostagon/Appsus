@@ -22,6 +22,14 @@
     align-items: center;
 }
 
+.self-start {
+    align-self: flex-start;
+}
+
+.self-end {
+    align-self: flex-end;
+}
+
 .justify-center {
     justify-content: center;
 }
@@ -48,7 +56,7 @@
     visibility: hidden;
 }
 
-.inline-block {
+.inline{
     display: inline-block;
 }
 
@@ -64,4 +72,12 @@
 
 .margin-center {
     margin: 0 auto;
+}
+
+.p7 {
+    padding: 7px;
+}
+
+.box-shadow {
+    box-shadow:0 0 20px rgba(0,0,0,0.8);
 }

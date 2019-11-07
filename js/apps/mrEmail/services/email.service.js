@@ -8,9 +8,13 @@ import {
 export const emailService = {
     getEmails,
     getEmailById,
-    removeEmail
+    removeEmail,
+    countReadEmails,
+    updateRead,
+    getEmptyEmail,
+    saveEmailAndStore
 }
-
+var gEmails = []
 const EMAILS_KEY = 'emails';
 
 function getEmailById(emailId) {
@@ -21,10 +25,48 @@ function getEmailById(emailId) {
 }
 
 function removeEmail(id) {
-    var idx = gEmails.findIndex(email => email.id === id);
-    if (idx !== -1) gEmails.splice(idx, 1)
-    storageService.store(EMAILS_KEY, gEmails)
+    let idx = gEmails.findIndex(email => email.id === id);
+    if (idx !== -1) gEmails.splice(idx, 1);
+    storageService.store(EMAILS_KEY, gEmails);
     return Promise.resolve();
+}
+
+function updateRead(id) {
+    let idx = gEmails.findIndex(email => email.id === id);
+    if (idx !== -1) {
+        gEmails[idx].isRead = true;
+        gEmails.splice(idx, 1, gEmails[idx]);
+    }
+    storageService.store(EMAILS_KEY, gEmails);
+}
+
+function countReadEmails() {
+    let res = 0;
+    gEmails.forEach(email => {
+        if (email.isRead) return res++;
+    })
+    return Promise.resolve(res);
+}
+
+function getEmails() {
+    var emails = storageService.load(EMAILS_KEY);
+
+    if (!emails) {
+        emails = [createEmail('First Email', 'Hello'),
+            createEmail('Second Email', 'Shalom'),
+            createEmail('Third Email', 'Want some coke?'),
+        ];
+    }
+    gEmails = emails;
+    storageService.store(EMAILS_KEY, emails);
+    return Promise.resolve(emails);
+}
+
+function getEmptyEmail() {
+    return {
+        subject: null,
+        body: null
+    }
 }
 
 function createEmail(subject, body) {
@@ -33,22 +75,12 @@ function createEmail(subject, body) {
         subject,
         body,
         isRead: false,
-        sentAt: Date.now()
+        createdAt: Date.now()
     }
 }
 
-var gEmails = []
-
-function getEmails() {
-    var emails = storageService.load(EMAILS_KEY);
-
-    if (!emails) {
-        emails = [createEmail('First Email', 'Hello', 'kosta'),
-            createEmail('Second Email', 'Shalom', 'shlomi'),
-            createEmail('Third Email', 'Want some coke?', 'koko'),
-        ];
-    }
-    gEmails = emails;
-    storageService.store(EMAILS_KEY, emails)
-    return Promise.resolve(emails);
+function saveEmailAndStore(subject, body) {
+    let email = createEmail(subject, body);
+    gEmails.unshift(email);
+    storageService.store(EMAILS_KEY, gEmails);
 }

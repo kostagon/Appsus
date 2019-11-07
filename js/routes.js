@@ -6,6 +6,7 @@ import bookDetails from './apps/missBook/book-pages/book-details.cmp.js';
 import keepApp from './apps/missKeep/keep-pages/keep-app.cmp.js';
 import emailApp from './apps/mrEmail/pages/email-app.cmp.js';
 import emailList from './apps/mrEmail/cmps/email-list.cmp.js';
+import emailCompose from './apps/mrEmail/cmps/email-compose.cmp.js';
 import emailDetails from './apps/mrEmail/cmps/email-details.cmp.js';
 
 
@@ -22,22 +23,22 @@ const routes = [{
         component: keepApp
     },
     {
-        path: '/email',
+        path: '/email/',
         component: emailApp,
         children: [{
-                path: '/',
+                path: 'compose',
+                component: emailCompose
+            },
+            {
+                path: '',
                 component: emailList
             },
             {
                 path: ':id',
                 component: emailDetails
-            }
+            },
         ]
     },
-    // {
-    //     path: '/email/:id',
-    //     component: emailDetails
-    // },
     {
         path: '/book',
         component: bookApp,
