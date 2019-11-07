@@ -1,36 +1,30 @@
 'use strict';
 
 import { storageService } from '../../../services/storage.service.js';
+import { makeId } from '../../../services/util.service.js';
 
 export const keepService = {
-    getNotes
+    getNotes,
+    saveNote,
+    createNote,
+    removeNote,
+    getNoteById
 }
 
 const KEEP_KEY = 'notes';
 
-var gNotes = [
-    {
-        type: 'noteTxt',
-        info: {
-            createdAt: new Date().toJSON().slice(0,10),
-            txt: 'please work please'
-        }
-    },
-    {
-        type: 'noteImg',
-        info: {
-            createdAt: new Date().toJSON().slice(0,10),
-            imgUrl: 'https://cloudfour.com/examples/img-currentsrc/images/kitten-large.png'
-        }
-    },
-    {
-        type: 'noteTodo',
-        info: {
-            createdAt: new Date().toJSON().slice(0,10),
-            todos: ['code','sleep','code again']
-        }
-    }
-]
+
+function getNoteById(noteId) {
+    const note = gNotes.find(note => note.info.id === noteId)
+    return Promise.resolve(note);
+}
+
+function removeNote(noteId) {
+    var idx = gNotes.findIndex(note => note.info.id === noteId);
+    if (idx !== -1) gNotes.splice(idx, 1)
+    storageService.store(KEEP_KEY, gNotes);
+    return Promise.resolve();
+}
 
 function getNotes() {
     var notes = storageService.load(KEEP_KEY);
@@ -41,3 +35,78 @@ function getNotes() {
     gNotes = notes;
     return Promise.resolve(notes);
 }
+
+function saveNote(note) {
+    // NEW NOTE
+    if (!note.info.id) {
+        note.info.id = makeId();
+        gNotes.unshift(note);
+    } else {
+        // EXISTING NOTE
+        const idx = gNotes.findIndex(currNote => currNote.info.id === note.info.id);
+        gNotes.splice(idx, 1, note);
+    }
+    storageService.store(KEEP_KEY, gNotes);
+    return Promise.resolve(note);
+    // return Promise.reject('Problam saving new note')
+}
+
+function createNote(type, val) {
+    var valKey;
+    if (type === 'noteTxt') valKey = 'txt'
+    else if (type === 'noteImg') valKey = 'imgUrl'
+    else if (type === 'noteTodo') {
+        valKey = 'todos'
+        val = val.split(',')
+    }
+    var note = {
+        type,
+        info: {
+            createdAt: new Date().toJSON().slice(0, 10),
+            [valKey]: val,
+            style: { bgc: '' },
+            isPinned: false
+        },
+
+    }
+    return note;
+}
+
+
+var gNotes = [
+    {
+        type: 'noteTxt',
+        info: {
+            id: makeId(),
+            createdAt: new Date().toJSON().slice(0, 10),
+            txt: 'please work please',
+            style: { bgc: 'red' },
+            isPinned: true
+        }
+    },
+    {
+        type: 'noteImg',
+        info: {
+            id: makeId(),
+            createdAt: new Date().toJSON().slice(0, 10),
+            imgUrl: 'https://cloudfour.com/examples/img-currentsrc/images/kitten-large.png'
+        }
+    },
+    {
+        type: 'noteTodo',
+        info: {
+            style:{},
+            id: makeId(),
+            createdAt: new Date().toJSON().slice(0, 10),
+            todos: [{ txt: 'code', isMarked: true }, { txt: 'sleep', isMarked: true }, { txt: 'code again', isMarked: false }]
+        }
+    },
+    {
+        type: 'noteImg',
+        info: {
+            id: makeId(),
+            createdAt: new Date().toJSON().slice(0, 10),
+            imgUrl: 'https://thumbs.gfycat.com/IncredibleAshamedFreshwatereel-small.gif'
+        }
+    }
+]
