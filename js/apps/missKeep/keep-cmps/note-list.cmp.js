@@ -19,7 +19,7 @@ export default {
         <note-add></note-add>
 
         <label>Notes:</label>
-        <div class="notes-container">
+        <div class="notes-container space-around">
             <div v-for="note in notes">
                 <component :is="note.type" :info="note.info"></component>
             </div>

@@ -6,7 +6,6 @@ export default {
     name: 'keep-app',
     template: `
         <section class="keep-app-container container">
-            <h1>Miss Keep</h1>
             <note-list></note-list>
         </section>
     `,
