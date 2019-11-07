@@ -11,7 +11,7 @@ export default {
         }
     },
     template: `
-        <section v-if="email" class="email-details-container margin-center box-shadow">
+        <section v-if="email" class="email-details-container margin-center">
             <button @click="removeEmail(email.id)" class="float-right"> x </button>
             <p>Subject: {{email.subject}}</p>
             <p>Mail body: {{email.body}}</p>

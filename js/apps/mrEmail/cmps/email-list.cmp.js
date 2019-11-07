@@ -16,9 +16,8 @@ export default {
         }
     },
     template: `
-        <section class="email-list-container box-shadow">
-            <div class="list-header flex space-around align-center">
-                <h1 class="inline">Inbox</h1>
+        <section class="email-list-container cmp-main-container">
+            <div class="list-header flex space-between align-center">
                 <email-filter @filtered="setFilter"></email-filter>
                 <p class="inline" v-if="emails">Emails read: {{emailsRead}}/{{emails.length}}</p>
             </div>

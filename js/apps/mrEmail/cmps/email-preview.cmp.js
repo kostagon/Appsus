@@ -2,7 +2,7 @@ export default {
     props: ['email'],
     name: 'email-preview',
     template: `
-         <router-link exact :to="emailDetailsLink" v-bind:class="classObject">
+         <router-link exact :to="emailDetailsLink" :class="classObject">
             <section class="email-preview-container flex align-center space-between">
                 <p>Subject: {{email.subject}}</p>
                 <p>Mail body: {{email.body}}</p>

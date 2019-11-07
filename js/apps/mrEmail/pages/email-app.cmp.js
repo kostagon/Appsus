@@ -14,7 +14,6 @@ export default {
     },
     template: `
         <section class="email-app-container container">
-            <h1>Email app page</h1>
             <side-bar class="side-bar"></side-bar>
             <router-view />         
         </section>

@@ -1,29 +1,29 @@
 .side-bar {
     float: left;
     height: 100vh;
+    width: 220px;
+    border-right: 1px solid #d1d1d1;
 }
 
 .side-bar-item {
     display: block;
-    font-size: 1.5em;
-    padding: 17px;
-    margin: 7px;
+    font-size: 1.2em;
+    padding: 10px 0;
     cursor: pointer;
+    border-bottom: 1px solid #c3c3c3;
+    transition: .2s;
 }
 
 .side-bar-item:hover {
-    background-color: #88d8d1;
-    border-top-right-radius: 30px;
-    border-bottom-right-radius: 30px;
+    background-color: #d0e4e3;
 }
 
 .compose-btn {
     cursor: pointer;
-    background-color: #fff;
-    /* border: 1px solid darkcyan; */
-    border-radius: 40px;
+    background-color: #36a097;
+    color: white;
+    transition: .2s;
     padding: 7px;
-    margin: 10px;
     font-size: 1.2em;
 }
 
@@ -32,9 +32,5 @@
 }
 
 .compose-btn:hover {
-    color: #007bff;
-}
-
-.compose-btn:hover .plus-btn {
-    color: darkcyan;
+    background-color: #538f8a;
 }

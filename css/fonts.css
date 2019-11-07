@@ -7,3 +7,8 @@
     font-family: eurof;
     src: url('../fonts/eurofurence/eurof55.ttf');
 }
+
+@font-face {
+    font-family: Squada;
+    src: url('../fonts/SquadaOne/SquadaOne-Regular.ttf')
+}

@@ -1,0 +1,13 @@
+.list-header {
+    padding: 24px 10px 14px 10px;
+    border-bottom: 1px solid #b4b4b4;
+    background-color: #f7f7f7;
+}
+
+.cmp-main-container {
+    height: 100vh;
+}
+
+.isBold {
+    font-weight: 800;
+}

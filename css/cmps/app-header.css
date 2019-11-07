@@ -2,7 +2,7 @@
 .app-header-container {
     padding: 0 25px;
     background-color: #fff;
-    border-bottom: 3px solid #cbd0d0;
+    border-bottom: 1px solid #cbd0d0;
 }
 
 .app-header-container nav > * {

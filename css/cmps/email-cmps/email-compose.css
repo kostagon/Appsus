@@ -1,3 +1,19 @@
+.email-compose-container {
+    font-size: 1.3em;
+}
+
+.email-compose-container .body-msg {
+    height: 150px
+}
+
+.email-compose-container button {
+    font-size: 1.2em;
+}
+
+.email-msg {
+    font-size: 1.1em;
+}
+
 .body-msg {
-    height: 100px;
+    font-size: 1.4em;
 }

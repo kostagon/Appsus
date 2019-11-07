@@ -1,14 +1,9 @@
 .email-preview-container {
-    background-blend-mode: color-burn;
-    background-color: white;
-    border-bottom: 1px solid black;
-    padding-right: 7px;
-    padding-left: 7px;
+    border-bottom: 1px solid rgb(196, 194, 194);
+    padding-right: 20px;
+    padding-left: 20px;
+    font-size: 1.1em;
 }
 .email-preview-container:hover {
-    background-color: #88d8d1;
-}
-
-.isBold {
-    font-weight: 800;
+    background-color: #d6e0df;
 }

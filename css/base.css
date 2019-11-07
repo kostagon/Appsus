@@ -22,7 +22,7 @@ a {
 
 h1 {
     color: #36a097;
-    font-size: 60px;
+    font-size: 45px;
     font-weight: 900;
     margin: 15px 0;
     font-family: eurof;
@@ -35,6 +35,10 @@ h3 {
 
 input, button, textarea, select {
     outline: none;
+}
+
+textarea {
+    resize: none;
 }
 
 button{
