@@ -15,12 +15,12 @@ const KEEP_KEY = 'notes';
 
 
 function getNoteById(noteId) {
-    const note = gNotes.find(note => note.info.id === noteId)
+    const note = gNotes.find(note => note.id === noteId)
     return Promise.resolve(note);
 }
 
 function removeNote(noteId) {
-    var idx = gNotes.findIndex(note => note.info.id === noteId);
+    var idx = gNotes.findIndex(note => note.id === noteId);
     if (idx !== -1) gNotes.splice(idx, 1)
     storageService.store(KEEP_KEY, gNotes);
     return Promise.resolve();
@@ -38,12 +38,12 @@ function getNotes() {
 
 function saveNote(note) {
     // NEW NOTE
-    if (!note.info.id) {
-        note.info.id = makeId();
+    if (!note.id) {
+        note.id = makeId();
         gNotes.unshift(note);
     } else {
         // EXISTING NOTE
-        const idx = gNotes.findIndex(currNote => currNote.info.id === note.info.id);
+        const idx = gNotes.findIndex(currNote => currNote.id === note.id);
         gNotes.splice(idx, 1, note);
     }
     storageService.store(KEEP_KEY, gNotes);
@@ -56,18 +56,21 @@ function createNote(type, val) {
     if (type === 'noteTxt') valKey = 'txt'
     else if (type === 'noteImg') valKey = 'imgUrl'
     else if (type === 'noteTodo') {
-        valKey = 'todos'
-        val = val.split(',')
+        valKey = 'todos';
+        val = val.split(',');
+
+        val = val.reduce((acc, todo) => {
+            acc.push({ txt: todo, isMarked: false })
+            return acc;
+        }, [])
     }
     var note = {
         type,
         info: {
-            createdAt: new Date().toJSON().slice(0, 10),
             [valKey]: val,
-            style: { bgc: '' },
+            style: { backgroundColor: '#ffffff' },
             isPinned: false
-        },
-
+        }
     }
     return note;
 }
@@ -76,36 +79,36 @@ function createNote(type, val) {
 var gNotes = [
     {
         type: 'noteTxt',
+        id: makeId(),
         info: {
-            id: makeId(),
-            createdAt: new Date().toJSON().slice(0, 10),
             txt: 'please work please',
-            style: { bgc: 'red' },
+            style: { backgroundColor: 'red' },
             isPinned: true
         }
     },
     {
         type: 'noteImg',
+        id: makeId(),
         info: {
-            id: makeId(),
-            createdAt: new Date().toJSON().slice(0, 10),
+            style: { backgroundColor: '#ffffff' },
+            isPinned: false,
             imgUrl: 'https://cloudfour.com/examples/img-currentsrc/images/kitten-large.png'
         }
     },
     {
         type: 'noteTodo',
+        id: makeId(),
         info: {
-            style:{},
-            id: makeId(),
-            createdAt: new Date().toJSON().slice(0, 10),
+            isPinned: false,
+            style: { backgroundColor: '' },
             todos: [{ txt: 'code', isMarked: true }, { txt: 'sleep', isMarked: true }, { txt: 'code again', isMarked: false }]
         }
     },
     {
         type: 'noteImg',
+        id: makeId(),
         info: {
-            id: makeId(),
-            createdAt: new Date().toJSON().slice(0, 10),
+            style: { backgroundColor: '' },
             imgUrl: 'https://thumbs.gfycat.com/IncredibleAshamedFreshwatereel-small.gif'
         }
     }
