@@ -55,6 +55,7 @@ function createNote(type, val) {
     var valKey;
     if (type === 'noteTxt') valKey = 'txt'
     else if (type === 'noteImg') valKey = 'imgUrl'
+    else if (type === 'noteVid') valKey = 'vidUrl'
     else if (type === 'noteTodo') {
         valKey = 'todos';
         val = val.split(',');
@@ -110,6 +111,14 @@ var gNotes = [
         info: {
             style: { backgroundColor: '' },
             imgUrl: 'https://thumbs.gfycat.com/IncredibleAshamedFreshwatereel-small.gif'
+        }
+    },
+    {
+        type: 'noteVid',
+        id: makeId(),
+        info: {
+            style: { backgroundColor: '' },
+            vidUrl: '//vjs.zencdn.net/v/oceans.mp4'
         }
     }
 ]

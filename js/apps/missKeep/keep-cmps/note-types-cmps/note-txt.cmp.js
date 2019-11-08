@@ -6,31 +6,31 @@ import { eventBus } from '../../../../services/eventbus-service.js';
 export default {
 	name: 'txt-note',
 	template: `
-      <section class="note-card" 
+    <section class="note-card flex column" 
 		@mouseover="hover = true"
 		@mouseleave="hover = false"
 		:style="activeColor"
-	  >
+	>
 	  	
         <p>{{note.info.txt}}</p>
-
-		<template v-if="hover">
+		<div class="editBar flex space-around">
 			<i class="fas fa-font"></i>
-			<i @click="removeNote(note.id)" class="fas fa-trash-alt"></i>
-			<i class="fas fa-fill" @click="colorSelect = !colorSelect"></i>
+			<template v-if="hover">
+				<i @click="removeNote(note.id)" class="fas fa-trash-alt"></i>
+				<i class="fas fa-fill" @click="colorSelect = !colorSelect"></i>
 
-			<ul v-if="colorSelect" class="clean-list flex">
-				<li><i class="fas fa-tint" style='color:blue' @click="changeColor('blue')"></i></li>
-				<li><i class="fas fa-tint" style='color:yellow' @click="changeColor('yellow')"></i></li>
-				<li><i class="fas fa-tint" style='color:red' @click="changeColor('red')"></i></li>
-				<li><i class="fas fa-tint" style='color:green' @click="changeColor('green')"></i></li>
-			</ul>
+				<ul v-if="colorSelect" class="clean-list flex space-around">
+					<li><i class="fas fa-tint" style='color:blue' @click="changeColor('blue')"></i></li>
+					<li><i class="fas fa-tint" style='color:yellow' @click="changeColor('yellow')"></i></li>
+					<li><i class="fas fa-tint" style='color:red' @click="changeColor('red')"></i></li>
+					<li><i class="fas fa-tint" style='color:green' @click="changeColor('green')"></i></li>
+				</ul>
 
-		</template>
+			</template>
+		</div>
 
-
-      </section>
-      `,
+    </section>
+    `,
 	props: ['note'],
 	data() {
 		return {

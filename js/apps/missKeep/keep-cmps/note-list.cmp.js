@@ -5,6 +5,7 @@ import noteSearch from './note-search.cmp.js';
 import noteAdd from './note-add.cmp.js';
 import noteTxt from './note-types-cmps/note-txt.cmp.js';
 import noteImg from './note-types-cmps/note-img.cmp.js';
+import noteVid from './note-types-cmps/note-vid.cmp.js';
 import noteTodo from './note-types-cmps/note-todos.cmp.js';
 
 
@@ -43,6 +44,7 @@ export default {
         noteAdd,
         noteTxt,
         noteImg,
+        noteVid,
         noteTodo
     }
 }

@@ -2,7 +2,7 @@ import { keepService } from '../../keep-services/keep-service.js';
 import { eventBus } from '../../../../services/eventbus-service.js';
 
 export default {
-    name: 'img-note',
+    name: 'vid-note',
     template: `
     <section class="note-card flex column" 
         @mouseover="hover = true"
@@ -10,9 +10,14 @@ export default {
         :style="activeColor"
     >
         
-        <img :src="note.info.imgUrl" />
+
+        <div>
+            <video ref="videoPlayer" class="video-js"></video>
+        </div>
+
+
         <div class="editBar flex space-around">
-            <i class="far fa-image"></i>
+            <i class="far fa-video"></i>
             <template v-if="hover">
                 <i @click="removeNote(note.id)" class="fas fa-trash-alt"></i>
                 <i class="fas fa-fill" @click="colorSelect = !colorSelect"></i>
@@ -33,6 +38,7 @@ export default {
         return {
             hover: false,
             colorSelect: false,
+
         }
     },
     computed: {
