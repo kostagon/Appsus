@@ -29,7 +29,7 @@ export default {
         },
         classObject() {
             return {
-                'isBold': this.email.isRead
+                'isBold': !this.email.isRead
             }
         }
     }
