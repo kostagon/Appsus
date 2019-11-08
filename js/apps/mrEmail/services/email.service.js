@@ -52,9 +52,9 @@ function getEmails() {
     var emails = storageService.load(EMAILS_KEY);
 
     if (!emails) {
-        emails = [createEmail('First Email', 'Hello'),
-            createEmail('Second Email', 'Shalom'),
-            createEmail('Third Email', 'Want some coke?'),
+        emails = [createEmail('Welcome to Facebook', '#1 email body', 'Mark'),
+            createEmail('Pook review', 'I really liked your pook', 'Shosh'),
+            createEmail('Holla Lola', 'Wanna marry me?', 'Faruk'),
         ];
     }
     window.emails = emails;
@@ -70,13 +70,15 @@ function getEmptyEmail() {
     }
 }
 
-function createEmail(subject, body) {
+function createEmail(subject, body, from) {
     return {
         id: makeId(),
+        from,
         subject,
         body,
         isRead: false,
         isStarred: false,
+        isSentByMe: false,
         createdAt: Date.now()
     }
 }

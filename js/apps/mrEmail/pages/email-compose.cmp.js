@@ -17,7 +17,6 @@ export default {
                 <textarea v-model="newMail.body" class="body-msg p7" placeholder="Body"></textarea>
                 <div class="flex space-between">
                     <router-link to="/email"><button @click="composeEmail" class="p7 gap">Send</button></router-link>
-                    <button class="p7 gap">Trash</button>
                 </div>
             </form>
         </section>

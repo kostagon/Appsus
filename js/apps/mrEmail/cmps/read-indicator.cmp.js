@@ -11,9 +11,7 @@ export default {
         }
     },
     template: `
-        <template>
-            <span class="float-right">{{readEmailsAmount}}/{{emailsAmount}}</p>
-        </template>
+            <span v-show="emailsAmount" class="float-right">{{readEmailsAmount}}/{{emailsAmount}}</span>
     `,
     created() {
         eventBus.$on('emails', emails => {
@@ -22,6 +20,5 @@ export default {
         eventBus.$on('read-emails', res => {
             this.readEmailsAmount = res;
         })
-        console.log(emails);
     }
 }

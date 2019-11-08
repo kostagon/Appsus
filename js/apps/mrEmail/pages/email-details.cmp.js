@@ -11,11 +11,17 @@ export default {
         }
     },
     template: `
-        <section v-if="email" class="email-details-container margin-center">
-            <button @click="removeEmail(email.id)" class="float-right"> x </button>
-            <p>Subject: {{email.subject}}</p>
-            <p>Mail body: {{email.body}}</p>
-            <p>Created on: {{createdTimeToStr}}</p>
+        <section v-if="email" class="email-details-container">
+
+            <div class="email-header flex space-between">
+                <h3>From: <span class="underline">{{email.from}}</span></h3>
+                <button @click="removeEmail(email.id)" class="self-center">X</button>
+            </div>
+            <div class="email-content flex column align-start">
+                <p class="date float-right-margin underline self-end">{{createdTimeToStr}}</p>
+                <h2><span class="underline">Subject:</span> {{email.subject}}</h2>
+                <p>{{email.body}}</p>
+            </div>
         </section>
     `,
     methods: {

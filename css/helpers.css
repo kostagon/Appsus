@@ -22,12 +22,24 @@
     align-items: center;
 }
 
+.align-start {
+    align-items: flex-start;
+}
+
 .self-start {
     align-self: flex-start;
 }
 
+.self-center {
+    align-self: center;
+}
+
 .self-end {
     align-self: flex-end;
+}
+
+.justify-start {
+    justify-content: flex-start;
 }
 
 .justify-center {
@@ -69,6 +81,7 @@
 }
 
 .float-right-margin {
+    position: absolute;
         margin-right: 5px;
         margin-top: 5px;
         float:right;
@@ -84,4 +97,16 @@
 
 .box-shadow {
     box-shadow:0 0 20px rgba(0,0,0,0.8);
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.block {
+    display: block;
+}
+
+.mb15 {
+    margin-bottom: 15px;
 }

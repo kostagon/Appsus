@@ -5,8 +5,8 @@ export default {
          <router-link exact :to="emailDetailsLink" :class="classObject">
             <section class="email-preview-container flex align-center space-between">
                 
-                <p><span class="star-btn" @click.prevent="toggleStarred">{{isStarred}}</span> Subject: {{email.subject}}</p>
-                <p>Mail body: {{email.body}}</p>
+                <p><span class="star-btn" @click.prevent="toggleStarred">{{isStarred}}</span> From: {{email.from}}</p>
+                <p>{{email.subject}}</p>
                 <p>Sent at: {{createdTimeToStr}}</p>
             </section>
         </router-link>

@@ -1,17 +1,22 @@
 .email-compose-container {
-    font-size: 1.3em;
+    margin-right: 15px;
 }
 
 .email-compose-container .body-msg {
-    height: 150px
+    height: 150px;
+    margin: 5px;
 }
 
 .email-compose-container button {
+    background-color: #fff;
+    background-color: rgb(115, 195, 245);
     font-size: 1.2em;
+    cursor: pointer;
 }
 
 .email-msg {
     font-size: 1.1em;
+    margin: 5px;
 }
 
 .body-msg {

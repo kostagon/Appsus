@@ -28,9 +28,8 @@ h1 {
     font-family: eurof;
 }
 
-h3 {
+h2,h3 {
     color: #424242;
-    margin-top: 10px;
 }
 
 input,
