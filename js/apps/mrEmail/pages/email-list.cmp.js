@@ -1,6 +1,9 @@
 import {
     emailService
-} from '../services/email.service.js'
+} from '../services/email.service.js';
+import {
+    eventBus
+} from '../../../services/eventbus-service.js';
 
 import emailPreview from '../cmps/email-preview.cmp.js';
 import emailFilter from '../cmps/email-filter.cmp.js';
@@ -27,6 +30,7 @@ export default {
     methods: {
         setFilter(filter) {
             this.filterBy = filter;
+            console.log(filter);
         },
         updateStarred(emailId, newVal) {
             emailService.updateProp(emailId, newVal)
@@ -37,12 +41,13 @@ export default {
             if (!this.filterBy) return this.emails;
             let regex = new RegExp(`${this.filterBy.txt}`, 'i');
             let newEmails = this.emails.filter(email => {
-                let readFilter = this.filterBy.read;
+                let optionsFilter = this.filterBy.options;
 
                 return (regex.test(email.body) || regex.test(email.subject)) &&
-                    (readFilter === 'read' && email.isRead ||
-                    readFilter === 'unread' && !email.isRead ||
-                    readFilter === 'all');
+                    (optionsFilter === 'read' && email.isRead ||
+                        optionsFilter === 'unread' && !email.isRead ||
+                        optionsFilter === 'starred' && email.isStarred ||
+                        optionsFilter === 'all');
 
             })
             return newEmails;
@@ -56,10 +61,12 @@ export default {
         emailService.getEmails()
             .then(emails => {
                 this.emails = emails;
+                eventBus.$emit('emails', emails);
             });
         emailService.countReadEmails()
             .then(res => {
-                this.emailsRead = res
-            })
+                this.emailsRead = res;
+                eventBus.$emit('read-emails', res);
+            });
     }
 }

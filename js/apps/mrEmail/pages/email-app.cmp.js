@@ -3,7 +3,7 @@ import {
 } from '../services/email.service.js'
 
 import sideBar from '../cmps/side-bar.cmp.js';
-import emailAdd from '../cmps/email-compose.cmp.js';
+import emailAdd from './email-compose.cmp.js';
 
 export default {
     name: 'email-app',

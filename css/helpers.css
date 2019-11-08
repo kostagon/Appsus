@@ -65,9 +65,13 @@
 }
 
 .float-right {
-    margin-right: 5px;
-    margin-top: 5px;
     float:right;
+}
+
+.float-right-margin {
+        margin-right: 5px;
+        margin-top: 5px;
+        float:right;
 }
 
 .margin-center {

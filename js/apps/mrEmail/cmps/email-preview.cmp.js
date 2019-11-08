@@ -44,8 +44,5 @@ export default {
                 'isBold': !this.email.isRead
             }
         }
-    },
-    created(){
-        console.log(this.email);
     }
 }

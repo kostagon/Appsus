@@ -36,9 +36,9 @@ h3 {
 input,
 button,
 textarea,
-select {
+select{
     outline: none;
-    border: none;
+    border-radius: 4px;
 }
 
 textarea {

@@ -1,5 +1,5 @@
 .list-header {
-    padding: 24px 10px 14px 10px;
+    padding: 24px 10px 24px 10px;
     border-bottom: 1px solid #b4b4b4;
     background-color: #f7f7f7;
 }
@@ -17,8 +17,4 @@
     font-size: 1.4em;
     font-weight: 700;
     color: #f4b400;
-}
-
-.star-btn:hover {
-    font-weight: 900;
 }
