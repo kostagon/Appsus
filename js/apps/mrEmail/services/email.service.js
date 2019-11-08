@@ -71,7 +71,7 @@ function getEmptyEmail() {
     }
 }
 
-function createEmail(subject, body, from) {
+function createEmail(subject, body, from, isSentByMe) {
     return {
         id: makeId(),
         from,
@@ -79,13 +79,13 @@ function createEmail(subject, body, from) {
         body,
         isRead: false,
         isStarred: false,
-        isSentByMe: false,
+        isSentByMe: isSentByMe || false,
         createdAt: Date.now()
     }
 }
 
 function saveEmailAndStore(subject, body, from) {
-    let email = createEmail(subject, body, from);
+    let email = createEmail(subject, body, from, true);
     gEmails.unshift(email);
     storageService.store(EMAILS_KEY, gEmails);
 }
