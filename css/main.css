@@ -37,6 +37,7 @@
 
 @import './cmps/notes-cmps/txt-note.css';
 @import './cmps/notes-cmps/todo-note.css';
+@import './cmps/notes-cmps/video-note.css';
 
 @import './cmps/notes-cmps/note-container.css';
 

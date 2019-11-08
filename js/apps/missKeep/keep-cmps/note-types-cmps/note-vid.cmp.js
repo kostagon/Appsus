@@ -11,13 +11,15 @@ export default {
     >
         
 
-        <div>
-            <video ref="videoPlayer" class="video-js"></video>
+        <div class="video-player">
+            <video class="video" ref="video">
+                <source :src="note.info.vidUrl" type="video/mp4">
+            </video>
         </div>
 
 
         <div class="editBar flex space-around">
-            <i class="far fa-video"></i>
+            <i class="fas fa-video"></i>
             <template v-if="hover">
                 <i @click="removeNote(note.id)" class="fas fa-trash-alt"></i>
                 <i class="fas fa-fill" @click="colorSelect = !colorSelect"></i>
@@ -37,15 +39,21 @@ export default {
     data() {
         return {
             hover: false,
-            colorSelect: false,
-
+            colorSelect: false
         }
+    },
+    mounted(){
+        // this.videoElement.autoplay = true;
+        this.videoElement.controls = true;
     },
     computed: {
         activeColor() {
             return {
                 backgroundColor: this.note.info.style.backgroundColor
             }
+        },
+        videoElement() {
+            return this.$refs.video;
         }
     },
     methods: {
