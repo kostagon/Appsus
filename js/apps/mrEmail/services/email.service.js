@@ -66,7 +66,8 @@ function getEmails() {
 function getEmptyEmail() {
     return {
         subject: null,
-        body: null
+        body: null,
+        from: null
     }
 }
 
@@ -83,8 +84,8 @@ function createEmail(subject, body, from) {
     }
 }
 
-function saveEmailAndStore(subject, body) {
-    let email = createEmail(subject, body);
+function saveEmailAndStore(subject, body, from) {
+    let email = createEmail(subject, body, from);
     gEmails.unshift(email);
     storageService.store(EMAILS_KEY, gEmails);
 }

@@ -13,6 +13,7 @@ export default {
         <section class="email-compose-container cmp-main-container">
             <form class="flex column">
                 <h2 class="copose-header self-start gap">New email</h2>
+                <input v-model="newMail.from" type="text" class="email-msg p7" placeholder="From">
                 <input v-model="newMail.subject" type="text" class="email-msg p7" placeholder="Subject">
                 <textarea v-model="newMail.body" class="body-msg p7" placeholder="Body"></textarea>
                 <div class="flex space-between">
@@ -24,12 +25,12 @@ export default {
     methods: {
         composeEmail() {
             if(!this.dataIsValid) return;
-            emailService.saveEmailAndStore(this.newMail.subject, this.newMail.body);
+            emailService.saveEmailAndStore(this.newMail.subject, this.newMail.body, this.newMail.from);
         }
     },
     computed: {
         dataIsValid() {
-            return !!this.newMail.subject && !!this.newMail.body;
+            return !!this.newMail.from && !!this.newMail.subject && !!this.newMail.body;
         }
     }
 }
