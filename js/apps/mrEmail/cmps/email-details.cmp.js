@@ -24,6 +24,7 @@ export default {
             emailService.getEmailById(emailId)
                 .then(email => {
                     email.isRead = true;
+                    emailService.updateProp(email.id, email.isRead)
                     this.email = email;
                 })
         },
@@ -51,7 +52,6 @@ export default {
         }
     },
     created() {
-        emailService.updateRead(this.$route.params.id)
         this.loadMail();
     }
 }

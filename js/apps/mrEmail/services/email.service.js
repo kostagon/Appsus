@@ -10,7 +10,7 @@ export const emailService = {
     getEmailById,
     removeEmail,
     countReadEmails,
-    updateRead,
+    updateProp,
     getEmptyEmail,
     saveEmailAndStore
 }
@@ -31,10 +31,10 @@ function removeEmail(id) {
     return Promise.resolve();
 }
 
-function updateRead(id) {
+function updateProp(id, prop) {
     let idx = gEmails.findIndex(email => email.id === id);
     if (idx !== -1) {
-        gEmails[idx].isRead = true;
+        gEmails[idx].prop = true;
         gEmails.splice(idx, 1, gEmails[idx]);
     }
     storageService.store(EMAILS_KEY, gEmails);
@@ -57,6 +57,7 @@ function getEmails() {
             createEmail('Third Email', 'Want some coke?'),
         ];
     }
+    window.emails = emails;
     gEmails = emails;
     storageService.store(EMAILS_KEY, emails);
     return Promise.resolve(emails);
@@ -75,6 +76,7 @@ function createEmail(subject, body) {
         subject,
         body,
         isRead: false,
+        isStarred: false,
         createdAt: Date.now()
     }
 }

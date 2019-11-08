@@ -11,3 +11,14 @@
 .isBold {
     font-weight: 800;
 }
+
+.star-btn {
+    padding-right: 7px;
+    font-size: 1.4em;
+    font-weight: 700;
+    color: #f4b400;
+}
+
+.star-btn:hover {
+    font-weight: 900;
+}

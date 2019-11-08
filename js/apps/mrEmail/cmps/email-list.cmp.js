@@ -21,12 +21,15 @@ export default {
                 <email-filter @filtered="setFilter"></email-filter>
                 <p class="inline" v-if="emails">Emails read: {{emailsRead}}/{{emails.length}}</p>
             </div>
-            <email-preview v-for="email in emailsToShow" :key="email.id" :email="email"></email-preview>
+            <email-preview v-for="email in emailsToShow" @starred="updateStarred" :key="email.id" :email="email"></email-preview>
         </section>
     `,
     methods: {
         setFilter(filter) {
             this.filterBy = filter;
+        },
+        updateStarred(emailId, newVal) {
+            emailService.updateProp(emailId, newVal)
         }
     },
     computed: {
