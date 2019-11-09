@@ -8,7 +8,8 @@ export default {
             <pre class="about-us">
 We are Kosta & Dotan,
 we created this site
-for Coding Academy's 3rd sprint project.
+for Coding Academy's 3rd
+sprint project.
             </pre>
             <div class="git-links">
                 <a class="git-link1" href="https://github.com/kostagon/">Kosta's Github</a> |

@@ -22,7 +22,7 @@ export default {
     },
     template: `
         <section class="email-list-container">
-            <div class="list-header flex space-between align-center">
+            <div class="list-header flex space-around align-center">
                 <email-filter @filtered="setFilter"></email-filter>
                 <email-sort @sorted="setSort"></email-sort>
                 <p class="emails-read inline" v-if="emails">Emails read: {{emailsRead}}/{{emails.length}}</p>
