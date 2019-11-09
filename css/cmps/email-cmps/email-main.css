@@ -8,6 +8,8 @@
     .list-header {
         padding: 0 10px;
         border-bottom: 0;
+        display: flex;
+        justify-content: space-around;
     }
     .list-header .emails-read {
         display: none;

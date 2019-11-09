@@ -37,16 +37,20 @@
 
 @media (max-width: 740px) {
     .side-bar {
-        width: 150px;
+        height: auto;
+        width: auto;
+        display: flex;
+        justify-content: space-between;
+        float: none;
+    }
+    .side-bar-item {
+        font-size: 1em;
+        border-bottom: 0;
     }
     .compose-btn {
         font-size: 1em;
     }
     .plus-btn {
         font-size: 1.4em;
-    }
-    .side-bar-item {
-        font-size: 1em;
-        
     }
 }
