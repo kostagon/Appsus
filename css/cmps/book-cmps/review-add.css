@@ -3,7 +3,6 @@
     margin: 0;
     margin-right: 15px;
     font-size: 20px;
-    color: #1d9389;
     margin-left: 25px;
     font-size: 23px;
     margin-right: 0;
@@ -62,5 +61,6 @@
 
 .review-add-container {
     width: 100%;
-    background-color: #cbd0d0;
+    border-top: 1px solid rgba(172, 169, 169, 0.507);
+    border-bottom: 1px solid rgba(172, 169, 169, 0.507);
 }

@@ -5,13 +5,12 @@
     height: 300px;
     cursor: pointer;
     position: relative;
-    background-color: #B2DFDB;
     border-radius: 10px;
-    transition: background .3s ease-out;
+    transition: .3s ease-out;
 }
 
 .book-preview-container:hover {
-    background-color: #cbd0d0;
+    background-color: #1a212c;
 }
 
 .book-preview-container p {

@@ -48,7 +48,7 @@ export default {
         },
         classObject() {
             return {
-                'isBold': !this.email.isRead
+                'isRead': this.email.isRead
             }
         }
     }

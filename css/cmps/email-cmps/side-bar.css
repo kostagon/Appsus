@@ -17,12 +17,13 @@
 }
 
 .side-bar-item:hover {
-    background-color: #d0e4e3;
+    background-color: #538f8a;
 }
 
 .compose-btn {
     cursor: pointer;
-    background-color: #36a097;
+    border-bottom: 1px solid #c3c3c3;
+    background-color: #404852;
     color: white;
     transition: .2s;
     padding: 7px;
@@ -31,6 +32,7 @@
 
 .plus-btn {
     font-size: 1.7em;
+    color: rgb(82, 175, 102);
 }
 
 .compose-btn:hover {

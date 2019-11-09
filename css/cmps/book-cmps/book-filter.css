@@ -1,6 +1,5 @@
 
 .book-filter-container {
-    background-color: #cbd0d0;
     height: 50px;
     margin-bottom: 15px;
 }
@@ -10,7 +9,6 @@
     margin: 0;
     margin-right: 30px;
     font-size: 20px;
-    color: #1d9389;
 }
 
 .book-filter-container form {
