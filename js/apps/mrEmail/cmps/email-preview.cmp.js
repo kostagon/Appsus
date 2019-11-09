@@ -5,14 +5,17 @@ export default {
          <router-link exact :to="emailDetailsLink" :class="classObject">
             <section class="email-preview-container flex align-center space-between">
                 
-                <p><span class="star-btn" @click.prevent="toggleStarred">{{isStarred}}</span> From: {{email.from}}</p>
+                <div>
+                    <span class="star-btn" @click.prevent="toggleStarred">{{isStarred}}</span>
+                    <p class="inline">{{email.from}}</p>
+                </div>
                 <p>{{email.subject}}</p>
-                <p>Sent at: {{createdTimeToStr}}</p>
+                <p>{{createdTimeToStr}}</p>
             </section>
         </router-link>
     `,
-    methods:{
-        toggleStarred(){
+    methods: {
+        toggleStarred() {
             this.email.isStarred = !this.email.isStarred;
             console.log(this.email.id);
             this.$emit('starred', this.email.id, this.email.isStarred);
@@ -30,7 +33,7 @@ export default {
             return `${day}/${month}/${year} at ${hour}:${minutes}`;
         },
         isStarred() {
-            if(this.email.isStarred) return '★';
+            if (this.email.isStarred) return '★';
             else return '☆';
         },
         isRead() {

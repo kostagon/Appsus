@@ -19,18 +19,17 @@ export default {
         }
     },
     template: `
-        <section class="email-list-container cmp-main-container">
+        <section class="email-list-container">
             <div class="list-header flex space-between align-center">
                 <email-filter @filtered="setFilter"></email-filter>
-                <p class="inline" v-if="emails">Emails read: {{emailsRead}}/{{emails.length}}</p>
+                <p class="emails-read inline" v-if="emails">Emails read: {{emailsRead}}/{{emails.length}}</p>
             </div>
-            <email-preview v-for="email in emailsToShow" @starred="updateStarred" :key="email.id" :email="email"></email-preview>
+            <email-preview v-if="emailsToShow.length > 0" v-for="email in emailsToShow" @starred="updateStarred" :key="email.id" :email="email"></email-preview>
         </section>
     `,
     methods: {
         setFilter(filter) {
             this.filterBy = filter;
-            console.log(filter);
         },
         updateStarred(emailId, newVal) {
             emailService.updateProp(emailId, newVal)

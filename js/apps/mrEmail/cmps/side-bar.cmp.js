@@ -11,7 +11,7 @@ export default {
     template: `
         <section class="email-side-bar">
             <router-link to="/email/compose"><div class="compose-btn flex justify-center align-center"><span class="plus-btn">+</span>Compose</div></router-link>
-            <router-link to="/email"><div class="side-bar-item" @click="showByKey" data-key="all">Inbox <read-indicator></read-indicator></div></router-link>
+            <router-link to="/email"><div class="side-bar-item" @click="showByKey" data-key="all">Inbox <read-indicator @click="showByKey" data-key="all"></read-indicator></div></router-link>
             <router-link to="/email"><div class="side-bar-item" @click="showByKey" data-key="starred">Starred</div></router-link>
             <router-link to="/email"><div class="side-bar-item" @click="showByKey" data-key="sent">Sent Mails</div></router-link>
         </section>

@@ -27,7 +27,6 @@ export default {
     methods: {
         onFilter() {
             let filter = {...this.filterBy};
-            console.log(filter);
             this.$emit('filtered', filter);
         }
     },

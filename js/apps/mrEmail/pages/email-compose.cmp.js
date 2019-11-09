@@ -10,7 +10,7 @@ export default {
         }
     },
     template: `
-        <section class="email-compose-container cmp-main-container">
+        <section class="email-compose-container">
             <form class="flex column">
                 <h2 class="copose-header self-start gap">New email</h2>
                 <input v-model="newMail.from" type="text" class="email-msg p7" placeholder="From">

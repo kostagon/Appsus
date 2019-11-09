@@ -8,7 +8,7 @@
 .side-bar-item {
     display: block;
     font-size: 1.2em;
-    padding: 10px 0;
+    padding: 10px 5px;
     cursor: pointer;
     border-bottom: 1px solid #c3c3c3;
     transition: .2s;
@@ -33,4 +33,20 @@
 
 .compose-btn:hover {
     background-color: #538f8a;
+}
+
+@media (max-width: 740px) {
+    .side-bar {
+        width: 150px;
+    }
+    .compose-btn {
+        font-size: 1em;
+    }
+    .plus-btn {
+        font-size: 1.4em;
+    }
+    .side-bar-item {
+        font-size: 1em;
+        
+    }
 }
