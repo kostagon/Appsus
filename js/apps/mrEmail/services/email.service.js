@@ -12,7 +12,8 @@ export const emailService = {
     countReadEmails,
     updateProp,
     getEmptyEmail,
-    saveEmailAndStore
+    saveEmailAndStore,
+    onSaveCurrEmail
 }
 var gEmails = []
 const EMAILS_KEY = 'emails';
@@ -88,4 +89,8 @@ function saveEmailAndStore(subject, body, from) {
     let email = createEmail(subject, body, from, true);
     gEmails.unshift(email);
     storageService.store(EMAILS_KEY, gEmails);
+}
+
+function onSaveCurrEmail(email){
+    storageService.store('curr-email', email);
 }
