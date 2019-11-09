@@ -5,7 +5,6 @@ import noteMail from '../note-mail.cmp.js';
 import '../../../../cmps/long-text.cmp.js';
 
 
-import '../../../mrEmail/services/email.service.js';
 import { emailService } from '../../../mrEmail/services/email.service.js';
 
 
@@ -64,7 +63,6 @@ export default {
 	},
 	methods: {
 		sendAsMail(newMail) {
-			debugger;
 			emailService.saveEmailAndStore(newMail.subject, newMail.info, newMail.from)
 		},
 		togglePinned() {

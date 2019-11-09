@@ -2,6 +2,9 @@ import { keepService } from '../../keep-services/keep-service.js';
 import { eventBus } from '../../../../services/eventbus-service.js';
 import noteEdit from '../note-edit.cmp.js';
 
+import noteMail from '../note-mail.cmp.js';
+import { emailService } from '../../../mrEmail/services/email.service.js';
+
 
 export default {
     name: 'todos-note',
@@ -24,6 +27,9 @@ export default {
         <div class="editBar flex space-around">
             <i class="fas fa-list"></i>
             <template v-if="hover">
+
+                <i class="far fa-paper-plane" @click="sendMailMode = !sendMailMode"></i>
+
                 <i class="fas fa-thumbtack" :class="{ pinned:note.info.isPinned }" @click="togglePinned"></i>
                 <i class="fas fa-fill" @click="colorSelect = !colorSelect"></i>
 
@@ -39,7 +45,9 @@ export default {
 
                 <i @click="removeNote(note.id)" class="fas fa-trash-alt"></i>
             </template>
+            
             <note-edit v-if="editMode" :note="note" @cancel="cancelEditMode" @save="saveNote"></note-edit>
+            <note-mail v-if="sendMailMode" :note="note" @cancelMail="cancelMailMode" @saveMail="sendAsMail"></note-mail>
         </div>
     </section>
           `,
@@ -49,7 +57,8 @@ export default {
             todos: [],
             hover: false,
             colorSelect: false,
-            editMode: false
+            editMode: false,
+            sendMailMode: false
         }
     },
     computed: {
@@ -113,9 +122,16 @@ export default {
         saveNote(newInfo){
             this.editMode = false;
             keepService.editNote(this.note,newInfo);
-        }
+        },
+        sendAsMail(newMail) {
+			emailService.saveEmailAndStore(newMail.subject, newMail.info, newMail.from)
+        },
+        cancelMailMode() {
+			this.sendMailMode = false;
+		}
     },
     components: {
-        noteEdit
+        noteEdit,
+        noteMail
     }
 };

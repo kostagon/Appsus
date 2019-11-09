@@ -1,6 +1,8 @@
 import { keepService } from '../../keep-services/keep-service.js';
 import { eventBus } from '../../../../services/eventbus-service.js';
 import noteEdit from '../note-edit.cmp.js';
+import { emailService } from '../../../mrEmail/services/email.service.js';
+import noteMail from '../note-mail.cmp.js';
 
 
 export default {
@@ -17,7 +19,8 @@ export default {
             <i class="far fa-image"></i>
             <template v-if="hover">
 
-            <i class="fas fa-thumbtack" :class="{ pinned:note.info.isPinned }" @click="togglePinned"></i>
+                <i class="far fa-paper-plane" @click="sendMailMode = !sendMailMode"></i>
+                <i class="fas fa-thumbtack" :class="{ pinned:note.info.isPinned }" @click="togglePinned"></i>
 
                 <i class="fas fa-fill" @click="colorSelect = !colorSelect"></i>
                 <ul v-if="colorSelect" class="clean-list flex space-around">
@@ -31,6 +34,7 @@ export default {
                 <i @click="removeNote(note.id)" class="fas fa-trash-alt"></i>
             </template>
             <note-edit v-if="editMode" :note="note" @cancel="cancelEditMode" @save="saveNote"></note-edit>
+            <note-mail v-if="sendMailMode" :note="note" @cancelMail="cancelMailMode" @saveMail="sendAsMail"></note-mail>
         </div>
     </section>
           `,
@@ -39,7 +43,8 @@ export default {
         return {
             hover: false,
             colorSelect: false,
-            editMode: false
+            editMode: false,
+            sendMailMode: false
         }
     },
     computed: {
@@ -51,9 +56,9 @@ export default {
     },
     methods: {
         togglePinned() {
-			this.note.info.isPinned = !this.note.info.isPinned;
-			keepService.saveNote(this.note);
-		},
+            this.note.info.isPinned = !this.note.info.isPinned;
+            keepService.saveNote(this.note);
+        },
         removeNote(noteId) {
             keepService.removeNote(noteId)
                 .then(() => {
@@ -87,11 +92,15 @@ export default {
             this.editMode = false;
             keepService.editNote(this.note, newInfo);
         },
-        pinNote() {
-
+        sendAsMail(newMail) {
+            emailService.saveEmailAndStore(newMail.subject, newMail.info, newMail.from)
+        },
+        cancelMailMode() {
+            this.sendMailMode = false;
         }
     },
     components: {
-        noteEdit
+        noteEdit,
+        noteMail
     }
 }
