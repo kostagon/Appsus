@@ -2,13 +2,18 @@
     font-family: montserrat;
     src: url('../fonts/Montserrat-Regular.ttf');
 }
-
+/* 
 @font-face {
     font-family: eurof;
     src: url('../fonts/eurofurence/eurof55.ttf');
-}
+} */
 
 @font-face {
     font-family: Squada;
     src: url('../fonts/SquadaOne/SquadaOne-Regular.ttf')
+}
+
+@font-face{ 
+    font-family: Kaushan;
+    src: url('../fonts/Kaushan/KaushanScript-Regular.ttf');
 }

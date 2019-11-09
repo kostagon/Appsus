@@ -12,7 +12,7 @@ export default {
     template: `
         <section class="email-compose-container">
             <form class="flex column">
-                <h2 class="copose-header self-start gap">New email</h2>
+                <h2 class="compose-header self-start gap">New email</h2>
                 <input v-model="newMail.from" type="text" class="email-msg p7" placeholder="From">
                 <input v-model="newMail.subject" type="text" class="email-msg p7" placeholder="Subject">
                 <textarea v-model="newMail.body" class="body-msg p7" placeholder="Body"></textarea>

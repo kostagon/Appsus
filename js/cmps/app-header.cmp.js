@@ -4,7 +4,7 @@ export default {
     name: 'app-header',
     template: `
         <section class="app-header-container flex space-between align-center">
-            <h1>AppsYuSs</h1>
+            <router-link exact to="/"><h1 class="logo">ASSPUP</h1></router-link>
             <nav class="main-nav" :class="{ open: isOpen }" @click="toggleMenu">
                 <ul class="main-menu clean-list flex align-center">
                     <li>

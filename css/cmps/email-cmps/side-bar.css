@@ -1,8 +1,10 @@
 .side-bar {
     float: left;
-    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    height: 92vh;
     width: 220px;
-    border-right: 1px solid #d1d1d1;
+    border-right: 1px solid #827f7f;
 }
 
 .side-bar-item {

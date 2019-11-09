@@ -1,12 +1,11 @@
-.welcome-page-container img {
-    width: 100%;
-    height: 100%;
-}
-
 .welcome-page-container h1 {
     position: absolute;
     top: 220px;
-    right: 180px;
-    color: #e7ece2;
+    left: 180px;
+    color: rgb(82, 175, 102);
     font-size: 75px;
+}
+
+.app-header-container a {
+    font-family: montserrat;    
 }
