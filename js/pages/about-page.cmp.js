@@ -9,7 +9,7 @@ export default {
 We are Kosta & Dotan,
 we created this site
 for Coding Academy's 3rd
-sprint project.
+sprint project with VueJS.
             </pre>
             <div class="git-links">
                 <a class="git-link1" href="https://github.com/kostagon/">Kosta's Github</a> |
