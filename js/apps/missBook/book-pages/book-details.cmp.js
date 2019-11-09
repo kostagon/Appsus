@@ -1,7 +1,7 @@
 'use strict';
 
 import { bookService } from '../book.service.js';
-import '../books-cmps/long-text.cmp.js';
+import '../../../cmps/long-text.cmp.js';
 import { eventBus } from '../../../services/eventbus-service.js';
 import reviewAdd from '../books-cmps/review-add.cmp.js'
 

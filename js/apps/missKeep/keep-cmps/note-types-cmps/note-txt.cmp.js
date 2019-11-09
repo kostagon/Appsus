@@ -1,6 +1,12 @@
 import { keepService } from '../../keep-services/keep-service.js';
 import { eventBus } from '../../../../services/eventbus-service.js';
 import noteEdit from '../note-edit.cmp.js';
+import noteMail from '../note-mail.cmp.js';
+import '../../../../cmps/long-text.cmp.js';
+
+
+import '../../../mrEmail/services/email.service.js';
+import { emailService } from '../../../mrEmail/services/email.service.js';
 
 
 export default {
@@ -11,11 +17,14 @@ export default {
 		@mouseleave="hover = false"
 		:style="activeColor"
 	>
-	  	
-        <p>{{note.info.txt}}</p>
+		<long-text :txt="note.info.txt"></long-text>
+        
 		<div class="editBar flex space-around">
 			<i class="fas fa-font"></i>
 			<template v-if="hover">
+
+				<i class="far fa-paper-plane" @click="sendMailMode = !sendMailMode"></i>
+				
 
 				<i class="fas fa-thumbtack" :class="{ pinned:note.info.isPinned }" @click="togglePinned"></i>
 			
@@ -30,7 +39,9 @@ export default {
 
                 <i @click="removeNote(note.id)" class="fas fa-trash-alt"></i>
 			</template>
+			
 			<note-edit v-if="editMode" :note="note" @cancel="cancelEditMode" @save="saveNote"></note-edit>
+			<note-mail v-if="sendMailMode" :note="note" @cancelMail="cancelMailMode" @saveMail="sendAsMail"></note-mail>
 		</div>
 
     </section>
@@ -40,7 +51,8 @@ export default {
 		return {
 			hover: false,
 			colorSelect: false,
-			editMode: false
+			editMode: false,
+			sendMailMode: false
 		}
 	},
 	computed: {
@@ -51,6 +63,10 @@ export default {
 		}
 	},
 	methods: {
+		sendAsMail(newMail) {
+			debugger;
+			emailService.saveEmailAndStore(newMail.subject, newMail.info, newMail.from)
+		},
 		togglePinned() {
 			this.note.info.isPinned = !this.note.info.isPinned;
 			keepService.saveNote(this.note);
@@ -87,9 +103,13 @@ export default {
 		saveNote(newInfo) {
 			this.editMode = false;
 			keepService.editNote(this.note, newInfo);
-		}
+		},
+		cancelMailMode() {
+			this.sendMailMode = false;
+		},
 	},
 	components: {
-		noteEdit
+		noteEdit,
+		noteMail
 	}
 };
