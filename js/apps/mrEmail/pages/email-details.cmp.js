@@ -2,7 +2,6 @@ import {
     emailService
 } from '../services/email.service.js';
 
-
 export default {
     name: 'email-details',
     data() {
@@ -15,12 +14,17 @@ export default {
 
             <div class="email-header flex space-between">
                 <h3>From: <span class="underline">{{email.from}}</span></h3>
-                <button @click="removeEmail(email.id)" class="self-center">X</button>
+                <div class="flex">
+                    <button @click="removeEmail(email.id)" class="self-center">X</button>
+                    <button @click="saveAsNote(email)" class="self-center"><i class="fa fa-sticky-note"></i></button>
+                </div>
+                
             </div>
             <div class="email-content flex column align-start">
-                <p class="date float-right-margin underline self-end">{{createdTimeToStr}}</p>
+                <p class="date">{{createdTimeToStr}}</p>
                 <h2><span class="underline">Subject:</span> {{email.subject}}</h2>
                 <p>{{email.body}}</p>
+                
             </div>
         </section>
     `,
@@ -39,6 +43,9 @@ export default {
                 .then(() => {
                     this.$router.push('/email');
                 })
+        },
+        saveAsNote(email) {
+            emailService.onSaveCurrEmail(email);
         }
     },
     computed: {
