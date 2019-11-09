@@ -52,8 +52,8 @@ function getEmails() {
     var emails = storageService.load(EMAILS_KEY);
 
     if (!emails) {
-        emails = [createEmail('Welcome to Facebook', '#1 email body', 'Mark'),
-            createEmail('Pook review', 'I really liked your pook', 'Shosh'),
+        emails = [createEmail('Welcome', 'Here in facebook blablabla', 'Mark'),
+            createEmail('Pook review', 'Nice pook', 'Shosh'),
             createEmail('Holla Lola', 'Wanna marry me?', 'Faruk'),
         ];
     }

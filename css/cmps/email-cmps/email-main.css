@@ -4,6 +4,10 @@
     background-color: #f7f7f7;
 }
 
+.list-header input {
+    width: 30%;
+}
+
 @media (max-width: 740px) {
     .list-header {
         padding: 10px 10px;
