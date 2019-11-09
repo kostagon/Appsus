@@ -4,7 +4,7 @@ import { eventBus, EVENT_NOTE_FILTERED } from '../../../services/eventbus-servic
 
 export default {
     template: `
-    <section class="notes-search">
+    <section class="search-container">
             <input type="search" placeholder="Search notes" v-model="filter.txt" @input="updateFilter"></input>
             <i class="fas fa-search"></i>
        

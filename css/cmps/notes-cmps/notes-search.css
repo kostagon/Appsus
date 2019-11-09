@@ -1,25 +1,24 @@
-.notes-search {
-    padding: 20px;
-    background-color: white;
-}
 
 .search-container {
     position: relative;
+    padding: 10px;
+    background-color: #bccccc;
 }
 
 .search-container input {
     width: 250px;
     height: 32px;
-
     background: #fcfcfc;
     border: 1px solid #aaa;
     border-radius: 5px;
     box-shadow: 0 0 3px #ccc, 0 10px 15px #ebebeb inset;
-    text-indent: 32px;
+    text-indent: 72px;
+    padding: 20px;
+
 }
 
 .search-container .fa-search {
     position: absolute;
-    top: 10px;
-    left: 10px;
+    top: 20px;
+    left: 210px;
 }

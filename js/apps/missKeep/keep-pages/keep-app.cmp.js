@@ -9,7 +9,7 @@ export default {
     name: 'keep-app',
     template: `
         <section class="keep-app-container container">
-            <section class="flex space-around">
+            <section class="flex space-around search-container">
                 <note-search></note-search>
             </section>
 

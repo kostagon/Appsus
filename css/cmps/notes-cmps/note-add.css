@@ -1,9 +1,10 @@
 .notes-add-container {
     background-color: white;
-    max-width: 300px;
-    margin: 3px auto;
+    max-width: 320px;
+    margin: 20px auto;
     padding: 5px;
     box-shadow: inset 0 0 6px;
+    border-radius: 10px;
 }
 
 .note-input {
@@ -13,5 +14,5 @@
 }
 
 .selectedInput {
-    color:cadetblue;
+    color:#02635e;
 }
