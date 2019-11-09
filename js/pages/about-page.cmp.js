@@ -22,11 +22,5 @@ sprint project with VueJS.
         return {
             aboutInterval: null
         }
-    },
-    created() {
-        // this.aboutInterval = setInterval(() => console.log('Reading the about page...'), 1000);
-    },
-    destroyed() {
-        clearInterval(this.aboutInterval)
     }
 }
