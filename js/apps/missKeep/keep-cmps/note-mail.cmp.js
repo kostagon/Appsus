@@ -3,8 +3,8 @@ export default {
     template: `
 		<section class="notes-mail">
 
+            <input type="text" autocomplete="off" placeholder="from" v-model="newMail.from" />
 			<input type="text" autocomplete="off" placeholder="subject" v-model="newMail.subject" />
-			<input type="text" autocomplete="off" placeholder="from" v-model="newMail.from" />
             <input type="text" autocomplete="off" v-model="newMail.info" />
             
 			<button @click="cancelEdit">Cancel</button>

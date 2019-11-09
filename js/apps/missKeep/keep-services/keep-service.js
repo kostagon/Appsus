@@ -104,7 +104,7 @@ var gNotes = [
         id: makeId(),
         info: {
             txt: 'please work please',
-            style: { backgroundColor: 'red' },
+            style: { backgroundColor: 'lightcyan' },
             isPinned: true
         }
     },
