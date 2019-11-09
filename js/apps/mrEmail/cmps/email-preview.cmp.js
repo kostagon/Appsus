@@ -9,8 +9,12 @@ export default {
                     <span class="star-btn" @click.prevent="toggleStarred">{{isStarred}}</span>
                     <p class="inline">{{email.from}}</p>
                 </div>
-                <p>{{email.subject}}</p>
-                <p>{{createdTimeToStr}}</p>
+                <div>
+                    <p>{{email.subject}}</p>
+                </div>
+                <div>
+                    <p>{{createdTimeToStr}}</p>
+                </div>
             </section>
         </router-link>
     `,
