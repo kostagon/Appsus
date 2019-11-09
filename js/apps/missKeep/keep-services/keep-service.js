@@ -15,7 +15,6 @@ export const keepService = {
 const KEEP_KEY = 'notes';
 
 function editNote(note, newInfo) {
-    // debugger;
     switch (note.type) {
         case 'noteTxt':
             note.info.txt = newInfo;
@@ -82,7 +81,6 @@ function createNote(type, val) {
     else if (type === 'noteTodo') {
         valKey = 'todos';
         val = val.split(',');
-
         val = val.reduce((acc, todo) => {
             acc.push({ txt: todo, isMarked: false })
             return acc;

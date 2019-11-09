@@ -35,9 +35,9 @@ export default {
         updateFilter(newFilter) {
             this.filterBy = newFilter;
         },
-        addNote(note, data) {
-			keepService.editNote(note, data);
-        }
+        // addNote(note, data) {
+		// 	keepService.editNote(note, data);
+        // }
     },
     computed: {
         notesToShow() {
@@ -46,7 +46,7 @@ export default {
                 notesToShow = notesToShow.filter(note => this.filterBy.type === note.type)
             }
             if (this.filterBy && this.filterBy.txt) {
-                let search = this.filterBy.txt.toLowerCase()
+                let search = this.filterBy.txt.toLowerCase();
                 notesToShow = notesToShow.filter(note => {
                     let val = '';
                     switch (note.type) {

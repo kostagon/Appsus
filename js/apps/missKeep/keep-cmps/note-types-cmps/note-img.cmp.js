@@ -16,7 +16,9 @@ export default {
         <div class="editBar flex space-around">
             <i class="far fa-image"></i>
             <template v-if="hover">
-                
+
+            <i class="fas fa-thumbtack" :class="{ pinned:note.info.isPinned }" @click="togglePinned"></i>
+
                 <i class="fas fa-fill" @click="colorSelect = !colorSelect"></i>
                 <ul v-if="colorSelect" class="clean-list flex space-around">
                     <li><i class="fas fa-tint" style='color:blue' @click="changeColor('blue')"></i></li>
@@ -25,11 +27,10 @@ export default {
                     <li><i class="fas fa-tint" style='color:green' @click="changeColor('green')"></i></li>
                 </ul>
                 <i class="fas fa-edit" @click="editMode = !editMode"></i>
-
-                <note-edit v-if="editMode" :note="note" @cancel="cancelEditMode" @save="saveNote"></note-edit>
-
+                
                 <i @click="removeNote(note.id)" class="fas fa-trash-alt"></i>
-		    </template>
+            </template>
+            <note-edit v-if="editMode" :note="note" @cancel="cancelEditMode" @save="saveNote"></note-edit>
         </div>
     </section>
           `,
@@ -49,6 +50,10 @@ export default {
         }
     },
     methods: {
+        togglePinned() {
+			this.note.info.isPinned = !this.note.info.isPinned;
+			keepService.saveNote(this.note);
+		},
         removeNote(noteId) {
             keepService.removeNote(noteId)
                 .then(() => {
@@ -75,12 +80,15 @@ export default {
                 }
             )
         },
-        cancelEditMode(){
+        cancelEditMode() {
             this.editMode = false;
         },
-        saveNote(newInfo){
+        saveNote(newInfo) {
             this.editMode = false;
-            keepService.editNote(this.note,newInfo);
+            keepService.editNote(this.note, newInfo);
+        },
+        pinNote() {
+
         }
     },
     components: {

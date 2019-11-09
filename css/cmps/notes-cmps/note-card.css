@@ -12,3 +12,12 @@
 .editBar {
     margin-top: auto;
 }
+
+.fas,.far {
+    color: #16c1b9;
+    margin-right: auto;
+    padding-top: 15px;
+}
+.pinned {
+    color: #02635e;
+}
