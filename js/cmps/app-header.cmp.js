@@ -5,7 +5,7 @@ export default {
     template: `
         <section class="app-header-container flex space-between align-center">
             <h1>AppsYuSs</h1>
-            <nav class="main-nav" :class="{ open: isOpen }">
+            <nav class="main-nav" :class="{ open: isOpen }" @click="toggleMenu">
                 <ul class="main-menu clean-list flex align-center">
                     <li>
                         <router-link exact to="/book">Miss Books</router-link>

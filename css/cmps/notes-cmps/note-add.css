@@ -9,9 +9,9 @@
 .note-input {
     border: none;
     margin: 5px;
-    width: 70%;
+    width: 60%;
 }
 
 .selectedInput {
-    color:red;
+    color:cadetblue;
 }
