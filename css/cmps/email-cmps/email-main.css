@@ -6,7 +6,7 @@
 
 @media (max-width: 740px) {
     .list-header {
-        padding: 0 10px;
+        padding: 10px 10px;
         border-bottom: 0;
         display: flex;
         justify-content: space-around;
