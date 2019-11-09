@@ -8,11 +8,35 @@ export const keepService = {
     saveNote,
     createNote,
     removeNote,
-    getNoteById
+    getNoteById,
+    editNote
 }
 
 const KEEP_KEY = 'notes';
 
+function editNote(note, newInfo) {
+    // debugger;
+    switch (note.type) {
+        case 'noteTxt':
+            note.info.txt = newInfo;
+            break;
+        case 'noteImg':
+            note.info.imgUrl = newInfo;
+            break;
+        case 'noteVid':
+            note.info.vidUrl = newInfo;
+            break;
+        case 'noteTodo':
+            newInfo = newInfo.split(',');
+            newInfo = newInfo.reduce((acc, todo) => {
+                acc.push({ txt: todo, isMarked: false })
+                return acc;
+            }, [])
+            note.info.todos = newInfo;
+            break;
+    }
+    saveNote(note);
+}
 
 function getNoteById(noteId) {
     const note = gNotes.find(note => note.id === noteId)
@@ -48,7 +72,6 @@ function saveNote(note) {
     }
     storageService.store(KEEP_KEY, gNotes);
     return Promise.resolve(note);
-    // return Promise.reject('Problam saving new note')
 }
 
 function createNote(type, val) {

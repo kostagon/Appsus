@@ -1,6 +1,6 @@
 import { keepService } from '../../keep-services/keep-service.js';
 import { eventBus } from '../../../../services/eventbus-service.js';
-
+import noteEdit from '../note-edit.cmp.js';
 
 
 export default {
@@ -16,7 +16,7 @@ export default {
 		<div class="editBar flex space-around">
 			<i class="fas fa-font"></i>
 			<template v-if="hover">
-				<i @click="removeNote(note.id)" class="fas fa-trash-alt"></i>
+			
 				<i class="fas fa-fill" @click="colorSelect = !colorSelect"></i>
 
 				<ul v-if="colorSelect" class="clean-list flex space-around">
@@ -25,7 +25,11 @@ export default {
 					<li><i class="fas fa-tint" style='color:red' @click="changeColor('red')"></i></li>
 					<li><i class="fas fa-tint" style='color:green' @click="changeColor('green')"></i></li>
 				</ul>
+				<i class="fas fa-edit" @click="editMode = !editMode"></i>
 
+                <note-edit v-if="editMode" :note="note" @cancel="cancelEditMode" @save="saveNote"></note-edit>
+
+                <i @click="removeNote(note.id)" class="fas fa-trash-alt"></i>
 			</template>
 		</div>
 
@@ -36,6 +40,7 @@ export default {
 		return {
 			hover: false,
 			colorSelect: false,
+			editMode: false
 		}
 	},
 	computed: {
@@ -71,6 +76,16 @@ export default {
 						})
 				}
 			)
+		},
+		cancelEditMode() {
+			this.editMode = false;
+		},
+		saveNote(newInfo) {
+			this.editMode = false;
+			keepService.editNote(this.note, newInfo);
 		}
+	},
+	components: {
+		noteEdit
 	}
 };
