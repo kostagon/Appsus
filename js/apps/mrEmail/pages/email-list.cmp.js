@@ -47,6 +47,7 @@ export default {
                     (optionsFilter === 'read' && email.isRead ||
                         optionsFilter === 'unread' && !email.isRead ||
                         optionsFilter === 'starred' && email.isStarred ||
+                        optionsFilter === 'sent' && email.isSentByMe ||
                         optionsFilter === 'all');
 
             })

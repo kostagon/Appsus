@@ -13,7 +13,7 @@ export default {
             <router-link to="/email/compose"><div class="compose-btn flex justify-center align-center"><span class="plus-btn">+</span>Compose</div></router-link>
             <router-link to="/email"><div class="side-bar-item" @click="showByKey" data-key="all">Inbox <read-indicator></read-indicator></div></router-link>
             <router-link to="/email"><div class="side-bar-item" @click="showByKey" data-key="starred">Starred</div></router-link>
-            <div class="side-bar-item" @click="showByKey" data-key="me">Sent Mails</div>
+            <router-link to="/email"><div class="side-bar-item" @click="showByKey" data-key="sent">Sent Mails</div></router-link>
         </section>
     `,
     methods: {
@@ -22,7 +22,7 @@ export default {
             eventBus.$emit('show-emails-by', key);
         }
     },
-    components:{
+    components: {
         readIndicator
     }
 }
