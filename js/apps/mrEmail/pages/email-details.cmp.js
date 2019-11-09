@@ -2,6 +2,8 @@ import {
     emailService
 } from '../services/email.service.js';
 
+import {keepService} from '../../missKeep/keep-services/keep-service.js';
+
 export default {
     name: 'email-details',
     data() {
@@ -15,8 +17,8 @@ export default {
             <div class="email-header flex space-between">
                 <h3>From: <span class="underline">{{email.from}}</span></h3>
                 <div class="flex">
-                    <button @click="removeEmail(email.id)" class="self-center">X</button>
-                    <button @click="saveAsNote(email)" class="self-center"><i class="fa fa-sticky-note"></i></button>
+                    <button @click.once="saveAsNote(email)" class="self-center"><i class="fa fa-sticky-note"></i></button>
+                    <button @click="removeEmail(email.id)" class="self-center del-btn">X</button>
                 </div>
                 
             </div>
@@ -45,7 +47,8 @@ export default {
                 })
         },
         saveAsNote(email) {
-            emailService.onSaveCurrEmail(email);
+            let note = keepService.createNote('noteTxt', email.body);
+            keepService.saveNote(note)
         }
     },
     computed: {

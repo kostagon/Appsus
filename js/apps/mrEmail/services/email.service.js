@@ -92,5 +92,5 @@ function saveEmailAndStore(subject, body, from) {
 }
 
 function onSaveCurrEmail(email){
-    storageService.store('curr-mail', email);
+    storageService.store('curr-email', email);
 }

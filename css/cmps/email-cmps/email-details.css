@@ -14,11 +14,16 @@
 .email-header button{
     width: 40px;
     height: 40px;
-    background-color: rgb(207, 87, 87);
+    background-color: cadetblue;
     color: white;
 }
 
+.email-header .del-btn {
+    color: rgb(218, 83, 83);
+    background-color: #fff;
+    font-weight: 900;
+}
+
 .email-content {
-    margin: 20px;
     padding-left: 20px;
 }
