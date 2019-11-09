@@ -17,10 +17,5 @@ sprint project with VueJS.
             </div>
         
         </section>
-    `,
-    data() {
-        return {
-            aboutInterval: null
-        }
-    }
+    `
 }
