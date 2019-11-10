@@ -6,13 +6,11 @@
 }
 
 .list-header input {
-    width: 44%;
     font-family: Roboto, monospace;
-    border: none;
+    border: 1px solid white;
     background: none;
     color: white;
-    border-bottom: 1px solid white;
-    border-radius: 0;
+    margin: 10px;
 }
 
 @media (max-width: 740px) {
@@ -43,10 +41,17 @@
 }
 
 .select-style {
-    border: 1px solid #ccc;
-    width: 120px;
-    border-radius: 3px;
-    overflow: hidden;
+    border: none;
+    margin: 5px;
+    padding: 7px;
+    background-color: transparent;
+    color: #fff;
+    border-bottom: 1px solid white;
+}
+
+.select-style option {
+    background-color: transparent;
+    color: black;
 }
 
 .select-style select {

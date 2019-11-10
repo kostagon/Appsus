@@ -40,7 +40,7 @@ button,
 textarea,
 select{
     outline: none;
-    border-radius: 4px;
+    /* border-radius: 4px; */
 }
 
 textarea {

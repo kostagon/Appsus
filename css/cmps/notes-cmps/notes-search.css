@@ -4,17 +4,27 @@
 }
 
 .search-container-bar {
-    background-color: #00403c;
-    padding: 10px;
+    padding: 20px;
+}
+
+.search-container select {
+    padding:10px;
+    background-color: transparent;
+    color: #fff;
+}
+
+.search-container select option {
+    color: black;
+    background-color: transparent;
 }
 
 .search-container input {
     width: 250px;
     height: 32px;
-    background: #fcfcfc;
+    background: transparent;
+    color: #fff;
     border: 1px solid #aaa;
-    border-radius: 5px;
-    box-shadow: 0 0 3px #ccc, 0 10px 15px #ebebeb inset;
+    /* border-radius: 5px; */
     padding: 20px;
     margin-right: 5px;
 }
