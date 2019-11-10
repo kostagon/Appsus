@@ -10,13 +10,12 @@ export default {
                     <p class="inline">{{email.from}}</p>
                 </div>
                 <div>
-                    <p v-if="isLongTxt">{{isLongTxt}}</p>
-                    <p v-else>{{email.subject}}</p>
+                    <p>{{email.subject}}</p>
                 </div>
                 <div>
                     <p class="inline">{{createdTimeToStr}}</p>
                 </div>
-                <label>Mark as read: </label><input style="width: 20px; height: 20px;" @click.stop="toggleRead" type="checkbox" />
+                
             </section>
         </router-link>
     `,
@@ -51,11 +50,6 @@ export default {
         classObject() {
             return {
                 'isRead': this.email.isRead
-            }
-        },
-        isLongTxt() {
-            if (this.email.subject.length > 30){
-                return this.email.subject.substring(0, 30) + ' ...'
             }
         }
     }

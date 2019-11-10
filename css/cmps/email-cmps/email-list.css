@@ -1,0 +1,11 @@
+.email-list-container {
+    flex-grow: 1;
+    height: 87vh;
+    overflow-y: auto;
+}
+
+@media (max-width: 740px) {
+    .email-list-container {
+        overflow-y: unset;
+    }
+}

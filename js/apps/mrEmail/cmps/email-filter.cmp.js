@@ -13,7 +13,7 @@ export default {
         }
     },
     template: `
-        <form>
+        <form class="filter-form">
             <label>Filter by:</label>
             <input @input="onFilter" class="p7 text-center" v-model="filterBy.txt" type="text" placeholder="Text" />
             <select @change="onFilter" class="select-style p7" v-model="filterBy.options">
