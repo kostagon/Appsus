@@ -3,26 +3,31 @@ export default {
     name: 'email-preview',
     template: `
          <router-link exact :to="emailDetailsLink" :class="classObject">
-            <section class="email-preview-container flex align-center space-between">
+            <section class="email-preview-container flex align-center space-around">
                 
                 <div>
-                    <span class="star-btn" @click.prevent="toggleStarred">{{isStarred}}</span>
+                    <p class="inline star-btn" @click.prevent="toggleStarred">{{isStarred}}</p>
                     <p class="inline">{{email.from}}</p>
                 </div>
                 <div>
-                    <p>{{email.subject}}</p>
+                    <p v-if="isLongTxt">{{isLongTxt}}</p>
+                    <p v-else>{{email.subject}}</p>
                 </div>
                 <div>
-                    <p>{{createdTimeToStr}}</p>
+                    <p class="inline">{{createdTimeToStr}}</p>
                 </div>
+                <label>Mark as read: </label><input style="width: 20px; height: 20px;" @click.stop="toggleRead" type="checkbox" />
             </section>
         </router-link>
     `,
     methods: {
         toggleStarred() {
             this.email.isStarred = !this.email.isStarred;
-            console.log(this.email.id);
             this.$emit('starred', this.email.id, this.email.isStarred);
+        },
+        toggleRead() {
+            this.email.isRead = !this.email.isRead;
+            this.$emit('starred', this.email.id, this.email.isRead);
         }
     },
     computed: {
@@ -40,15 +45,17 @@ export default {
             if (this.email.isStarred) return '★';
             else return '☆';
         },
-        isRead() {
-            return this.email.isRead
-        },
         emailDetailsLink() {
-            return `/email/${this.email.id}`
+            return `/email/${this.email.id}`;
         },
         classObject() {
             return {
                 'isRead': this.email.isRead
+            }
+        },
+        isLongTxt() {
+            if (this.email.subject.length > 30){
+                return this.email.subject.substring(0, 30) + ' ...'
             }
         }
     }
