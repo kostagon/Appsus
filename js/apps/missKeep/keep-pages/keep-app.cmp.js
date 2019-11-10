@@ -8,7 +8,7 @@ import noteAdd from '../keep-cmps/note-add.cmp.js';
 export default {
     name: 'keep-app',
     template: `
-        <section class="keep-app-container container">
+        <section class="keep-app-container container animated fadeIn">
             <section class="flex space-around search-container-bar">
                 <note-search></note-search>
             </section>

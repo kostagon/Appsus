@@ -2,7 +2,6 @@
     display: inline-block;
     margin: 0;
     margin-right: 15px;
-    font-size: 20px;
     margin-left: 25px;
     font-size: 23px;
     margin-right: 0;
@@ -20,7 +19,6 @@
 
 .review-add-container input, .review-add-container select, .review-add-container textarea {
     outline: none;
-    border-radius: 5px;
     padding: 7px;
     margin: 5px 15px 10px 5px;
     width: 120px;
@@ -30,6 +28,7 @@
 .review-add-container textarea {
     width: 250px;
     margin-left: 10px;
+    border-radius: 4px;
 }
 
 .review-add-container .rate-btn {
@@ -42,7 +41,7 @@
 }
 
 .review-add-container .rate-btn:hover, .review-add-container .rate-btn.marked {
-    color: #36a097;
+    color: #f4b400;
 }
 
 .review-add-container .rate {
@@ -50,7 +49,7 @@
 }
 
 .review-add-container button {
-    background-color: #36a097;
+    background-color: rgb(82, 175, 102);
     padding: 7px;
     border-radius: 5px;
     border: none;

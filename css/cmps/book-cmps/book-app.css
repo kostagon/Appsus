@@ -3,7 +3,11 @@
 }
 
 .book-app-container input {
-    margin-right: 10px;
+    font-family: Roboto, monospace;
+    border-bottom: 1px solid white;
+    background: none;
+    color: white;
+    margin: 10px;
 }
 
 

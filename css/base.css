@@ -20,11 +20,10 @@ button {
 
 a {
     text-decoration: none;
-    color: inherit;
+    color: rgb(82, 175, 102);
 }
 
 h1 {
-    color: #36a097;
     font-size: 2.2em;
     margin: 15px 0;
     font-family: Squada;

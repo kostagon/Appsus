@@ -1,7 +1,8 @@
 .note-card {
     background-color: transparent;
-    width: 250px;
-    min-height: 200px;
+    width: 350px;
+    min-height: 280px;
+    font-size: 1.5em;
     padding: 15px;
     margin: 15px;
     border: 2px solid darkgray;
