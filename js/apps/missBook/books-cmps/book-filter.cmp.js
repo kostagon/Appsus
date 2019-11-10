@@ -4,8 +4,9 @@ export default {
     name: 'book-filter',
     template: `
     <section class="book-filter-container flex justify-center align-center">
-        <h2>Filter by</h2>
+        
         <form @submit.prevent="onFilter">
+        <h2>Filter: </h2>
             Name:
             <input type="text" placeholder="Book Name" v-model="filterBy.byName" />
             Price from: 

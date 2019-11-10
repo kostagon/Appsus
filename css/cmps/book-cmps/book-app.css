@@ -10,13 +10,11 @@
     margin: 10px;
 }
 
-
-
 .book-app-container .add-book-btn {
     border: 2px solid rgb(82, 175, 102);
     padding: 10px;
     border-radius: 15px;
-    margin: 0 auto;
+    margin: 20px auto;
     display: block;
     width: 105px;
     text-align: center;
