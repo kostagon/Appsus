@@ -8,12 +8,12 @@
 }
 
 .compose-header {
-    color: #bbe9ff;
+    color: rgb(82, 175, 102);
 }
 
 .email-compose-container button {
-    background-color: #fff;
-    background-color: rgb(115, 195, 245);
+    color: rgb(82, 175, 102);
+    background-color: white;
     font-size: 1.2em;
     cursor: pointer;
 }
