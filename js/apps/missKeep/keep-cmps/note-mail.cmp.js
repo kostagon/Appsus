@@ -6,10 +6,10 @@ export default {
             <input type="text" autocomplete="off" placeholder="from" v-model="newMail.from" />
 			<input type="text" autocomplete="off" placeholder="subject" v-model="newMail.subject" />
             <input type="text" autocomplete="off" v-model="newMail.info" />
-            
-			<button @click="cancelEdit">Cancel</button>
-			<button @click="saveEdit">Send</button>
-
+            <div class="flex">
+                <button @click="cancelEdit" class="edit-btn">Cancel</button>
+                <button @click="saveEdit" class="edit-btn">Send</button>
+            </div>
 		</section>
 	`,
     data() {

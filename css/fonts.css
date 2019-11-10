@@ -17,3 +17,7 @@
     font-family: Kaushan;
     src: url('../fonts/Kaushan/KaushanScript-Regular.ttf');
 }
+@font-face {
+    font-family: Roboto;
+    src: url('../fonts/robotomono/RobotoMono-Regular.ttf');
+}

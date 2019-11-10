@@ -2,6 +2,8 @@
     font-weight: normal;
     margin: 10px 0 2px;
     display: inline;
+    word-wrap: break-word;
+    line-height: 1.5em;
 }
 
 .long-text-container {

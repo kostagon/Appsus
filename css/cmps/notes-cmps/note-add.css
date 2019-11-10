@@ -16,3 +16,9 @@
 .selectedInput {
     color:#02635e;
 }
+.icons-container{
+    display: inline;
+}
+.icons-container i{
+    margin-right: 5px;
+}

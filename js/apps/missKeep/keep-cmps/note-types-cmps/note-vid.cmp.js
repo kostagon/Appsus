@@ -12,7 +12,6 @@ export default {
         @mouseleave="hover = false"
         :style="activeColor"
     >
-        
 
         <div class="video-player">
             <video class="video" ref="video">
@@ -20,28 +19,32 @@ export default {
             </video>
         </div>
 
+        <div class="editBar flex column space-around">
 
-        <div class="editBar flex space-around">
-            <i class="fas fa-video"></i>
-            <template v-if="hover">
-
-                <i class="far fa-paper-plane" @click="sendMailMode = !sendMailMode"></i>
-                <i class="fas fa-thumbtack" :class="{ pinned:note.info.isPinned }" @click="togglePinned"></i>
-                <i class="fas fa-fill" @click="colorSelect = !colorSelect"></i>
-
-                <ul v-if="colorSelect" class="clean-list flex space-around">
-                    <li><i class="fas fa-tint" style='color:blue' @click="changeColor('blue')"></i></li>
-                    <li><i class="fas fa-tint" style='color:yellow' @click="changeColor('yellow')"></i></li>
-                    <li><i class="fas fa-tint" style='color:red' @click="changeColor('red')"></i></li>
-                    <li><i class="fas fa-tint" style='color:green' @click="changeColor('green')"></i></li>
-                </ul>
-                <i class="fas fa-edit" @click="editMode = !editMode"></i>
-
-                
-                <i @click="removeNote(note.id)" class="fas fa-trash-alt"></i>
-                </template>
             <note-edit v-if="editMode" :note="note" @cancel="cancelEditMode" @save="saveNote"></note-edit>
             <note-mail v-if="sendMailMode" :note="note" @cancelMail="cancelMailMode" @saveMail="sendAsMail"></note-mail>
+            <div class="icons-container flex space-around">
+                <i class="fas fa-video"></i>
+                <template v-if="hover">
+
+                    <i class="fas fa-thumbtack" :class="{ pinned:note.info.isPinned }" @click="togglePinned"></i>
+                    <i class="far fa-paper-plane" @click="toggleMailMode"></i>
+                    <i class="fas fa-fill" @click="colorSelect = !colorSelect"></i>
+
+                    <ul v-if="colorSelect" class="clean-list flex space-around color-container">
+                        <li><i class="fas fa-tint" style='color:#7d4e2d' @click="changeColor('#7d4e2d')"></i></li>
+                        <li><i class="fas fa-tint" style='color:#004e8c' @click="changeColor('#004e8c')"></i></li>
+                        <li><i class="fas fa-tint" style='color:#9c271f' @click="changeColor('#9c271f')"></i></li>
+                        <li><i class="fas fa-tint" style='color:#79028e' @click="changeColor('#79028e')"></i></li>
+                        <li><i class="fas fa-tint" style='color:#d4be00' @click="changeColor('#d4be00')"></i></li>
+                        <li><i class="fas fa-tint" style='color:#005800' @click="changeColor('#005800')"></i></li>
+                    </ul>
+                    <i class="fas fa-edit" @click="toggleEditMode"></i>
+
+                    
+                    <i @click="removeNote(note.id)" class="fas fa-trash-alt"></i>
+                </template>
+            </div>
         </div>
     </section>
           `,
@@ -68,6 +71,14 @@ export default {
         }
     },
     methods: {
+        toggleMailMode(){
+			this.sendMailMode = !this.sendMailMode;
+			this.editMode = false;
+		},
+		toggleEditMode(){
+			this.editMode = !this.editMode;
+			this.sendMailMode = false;
+		},
         togglePinned() {
 			this.note.info.isPinned = !this.note.info.isPinned;
 			keepService.saveNote(this.note);

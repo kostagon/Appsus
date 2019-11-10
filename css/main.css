@@ -10,6 +10,7 @@
 @import './cmps/user-msg.css';
 @import './cmps/welcome-page.css';
 @import './cmps/about-page.css';
+@import './cmps/long-text.css';
 
 /* Email components */
 
@@ -25,7 +26,6 @@
 @import './cmps/book-cmps/book-preview.css';
 @import './cmps/book-cmps/book-filter.css';
 @import './cmps/book-cmps/review-add.css';
-@import './cmps/book-cmps/long-text.css';
 @import './cmps/book-cmps/book-app.css';
 @import './cmps/book-cmps/book-add.css';
 

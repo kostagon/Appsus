@@ -4,11 +4,12 @@ export default {
     props: ['note'],
     template: `
 		<section class="notes-edit">
-
-			<input type="text" autocomplete="off" v-model="newData" />
-			<button @click="cancelEdit">Cancel</button>
-			<button @click="saveEdit">Update</button>
-
+            
+            <input type="text" autocomplete="off" v-model="newData" />
+            <div class="flex">
+                <button @click="cancelEdit" class="edit-btn">Cancel</button>
+                <button @click="saveEdit" class="edit-btn">Update</button>
+            </div>
 		</section>
 	`,
     data() {

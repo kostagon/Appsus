@@ -6,7 +6,7 @@ export default {
     template: `
     <section class="search-container">
             <input type="search" placeholder="Search notes" v-model="filter.txt" @input="updateFilter"></input>
-            <i class="fas fa-search"></i>
+            <i class="fas fa-search" @click="updateFilter"></i>
        
         <select v-model="filter.type" @change="updateFilter">
             <option value="">All</option>
