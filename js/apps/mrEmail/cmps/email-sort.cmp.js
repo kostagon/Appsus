@@ -8,7 +8,7 @@ export default {
     template: `
         <form>
             <label>Sort by:</label>
-            <select @change="onSort" class="p7" v-model="sortBy">
+            <select @change="onSort" class="select-style p7" v-model="sortBy">
                 <option value="new">New</option>
                 <option value="name">Name</option>
             </select>

@@ -2,7 +2,7 @@
     padding-left: 20px;
 }
 
-.email-details-container > p {
+.email-details-container>p {
     padding-bottom: 20px;
 }
 
@@ -11,7 +11,7 @@
     padding-left: 22px;
 }
 
-.email-header button{
+.email-header button {
     width: 44px;
     height: 44px;
     background-color: transparent;
@@ -28,4 +28,8 @@
 
 .email-content {
     padding-left: 20px;
+}
+
+.email-content p {
+    white-space: pre;
 }

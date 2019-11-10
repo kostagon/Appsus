@@ -6,6 +6,15 @@
     font-size: 75px;
 }
 
+.welcome-page-container img {
+    position: absolute;
+    top: 320px;
+    left: 65px;
+    color: rgb(82, 175, 102);
+    font-size: 75px;
+}
+
+
 .app-header-container a {
-    font-family: montserrat;    
+    font-family: montserrat;
 }

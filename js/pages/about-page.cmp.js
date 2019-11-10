@@ -3,7 +3,7 @@
 export default {
     name: 'about-page',
     template: `
-        <section class="about-page-container">
+        <section class="about-page-container animated fadeInLeft">
             <h1>About us!</h1>
             <pre class="about-us">
 We are Kosta & Dotan,

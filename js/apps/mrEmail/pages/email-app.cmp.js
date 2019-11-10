@@ -13,7 +13,7 @@ export default {
         }
     },
     template: `
-        <section class="email-app-container">
+        <section class="email-app-container animated fadeIn">
             <side-bar class="side-bar"></side-bar>
             <router-view />         
         </section>

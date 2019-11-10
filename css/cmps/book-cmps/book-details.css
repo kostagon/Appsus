@@ -13,7 +13,6 @@
 }
 
 .book-details-container .reviews .name {
-    color: #35877c;
     margin: 10px;
 }
 
@@ -53,19 +52,23 @@
 }
 
 .book-details-container h3 {
-    color: #1c847b;
+    color: rgb(82, 175, 102);
     font-size: 25px;
     margin: 10px 0;
+    text-decoration: underline;
 }
 
-.book-details-container h4, .book-details-container p {
-    color: #424242;
+.book-details-container h4 {
+    color: rgb(82, 175, 102);
+}
+.book-details-container p {
+    color: rgb(212, 212, 212);
 }
 
 .book-details-container span {
     font-weight: normal;
     margin-left: 10px;
-    color: black;
+    color: #b39899;
     font-size: 16px;
 }
 
@@ -82,12 +85,13 @@
 }
 
 .book-details-container .reading-lvl {
-    color: #35877c;
+    color: rgb(82, 175, 102);
 }
 
 .book-details-container .book-condition {
-    color: #616161;
+    color: rgb(82, 175, 102);
     font-weight: normal;
+    font-size: 1.2em;
 }
 
 .book-details-container .close-btn {

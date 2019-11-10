@@ -8,7 +8,7 @@ import bookList from '../books-cmps/book-list.cmp.js';
 export default {
     name: 'book-app',
     template: `
-        <section class="book-app-container">
+        <section class="book-app-container animated fadeIn">
             <book-filter @filtered="setFilter"></book-filter> 
             <button class="add-book-btn" @click="isAdding = !isAdding">
                 <router-link to="/book/add">

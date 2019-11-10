@@ -63,6 +63,20 @@ function getEmails() {
         emails = [createEmail('Welcome', 'Here in facebook blablabla', 'Mark'),
             createEmail('Pook review', 'Nice pook', 'Shosh'),
             createEmail('Holla Lola', 'Wanna marry me?', 'Faruk'),
+            createEmail('The nookie', 'I did it all for the nookie', 'Nookie'),
+            createEmail('Nice to meet you', 'Hi im puki Ben David', 'Puki'),
+            createEmail('Uncle sam wants you!', 'Join the army now!', 'Rookie'),
+            createEmail('IMPORTANT', 'Do you want to buy fireworks??', 'Booki'),
+            createEmail('Child of parent', 'on what are you thinking?', 'Mooki'),
+            createEmail('send bobs pls', 'Show vagene', 'Ganesh'),
+            createEmail('Want to buy my shit?', 'it is very high quality?', 'Poopi'),
+            createEmail('Come come', '?W?a?s?s?u?p?', 'Dicky'),
+            createEmail('Beauty school', 'Push back the square', 'Chino'),
+            createEmail('What is going on', '...', 'Chi Cheng (R.I.P)'),
+            createEmail('Are you high?', 'Fabulous site!', 'Melissa'),
+            createEmail('Lorem ipsum', 'Ma kore ahi?', 'Geva'),
+            createEmail('Dolor sit amet', '??', 'Patrick'),
+            createEmail('Excuse me sir?', 'Come discord', 'Tonio'),
         ];
     }
     window.emails = emails;
