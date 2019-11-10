@@ -20,7 +20,7 @@ export default {
                 <input v-model="newMail.from" :disabled="isReply" type="text" class="email-msg p7" placeholder="From">
                 <input v-model="newMail.subject" :disabled="isReply" type="text" class="email-msg p7" placeholder="Subject">
                 <textarea v-model="newMail.body" class="body-msg p7" placeholder="Body"></textarea>
-                <div class="flex space-between">
+                <div class="flex self-center">
                     <router-link to="/email"><button @click="composeEmail" class="p7 gap">Send</button></router-link>
                 </div>
             </form>

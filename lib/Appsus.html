@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!-- saved from url=(0037)http://127.0.0.1:5502/#/email/compose -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Appsus</title>
+    <script src="./Appsus_files/6e980fe43c.js.download" crossorigin="anonymous"></script>
+    
+<link rel="stylesheet" href="./Appsus_files/free.min.css" media="all"><link rel="stylesheet" href="./Appsus_files/free-v4-font-face.min.css" media="all"><link rel="stylesheet" href="./Appsus_files/free-v4-shims.min.css" media="all"><link rel="stylesheet" href="./Appsus_files/main.css"></head>
+
+<body>
+    <section><section class="app-header-container flex space-between align-center"><a href="http://127.0.0.1:5502/#/" class=""><h1 class="logo">APPSUP</h1></a> <nav class="main-nav"><ul class="main-menu clean-list flex align-center"><li><a href="http://127.0.0.1:5502/#/book" class="">Miss Books</a></li> <li><a href="http://127.0.0.1:5502/#/keep" class="">Miss Keep</a></li> <li><a href="http://127.0.0.1:5502/#/email" class="">Mister Email</a></li> <li><a href="http://127.0.0.1:5502/#/about" class="">About</a></li> <li><a href="http://127.0.0.1:5502/#/" class="">Home</a></li></ul></nav> <button class="toggle-menu-btn fa" aria-hidden="true"></button> <div class="toggle-menu-screen screen"></div></section> <!----> <section class="email-app-container"><section class="email-side-bar side-bar"><a href="http://127.0.0.1:5502/#/email/compose" class="router-link-exact-active router-link-active"><div class="compose-btn flex justify-center align-center"><span class="plus-btn">+</span>Compose</div></a> <a href="http://127.0.0.1:5502/#/email" class="router-link-active"><div data-key="all" class="side-bar-item">Inbox <span class="float-right" data-key="all" style="">5/7</span></div></a> <a href="http://127.0.0.1:5502/#/email" class="router-link-active"><div data-key="starred" class="side-bar-item">Starred</div></a> <a href="http://127.0.0.1:5502/#/email" class="router-link-active"><div data-key="sent" class="side-bar-item">Sent Mails</div></a></section> <section class="email-compose-container"><form class="flex column"><h2 class="compose-header self-start gap">Compose email</h2> <input type="text" placeholder="From" class="email-msg p7"> <input type="text" placeholder="Subject" class="email-msg p7"> <textarea placeholder="Body" class="body-msg p7"></textarea> <div class="flex space-between"><a href="http://127.0.0.1:5502/#/email" class="router-link-active"><button class="p7 gap">Send</button></a></div></form></section></section></section>
+    
+    <script src="./Appsus_files/vue.js.download"></script>
+    <script src="./Appsus_files/vue-router.js.download"></script>
+    <script src="./Appsus_files/axios.js.download"></script>
+    <script type="module" src="./Appsus_files/main.js.download"></script>
+<!-- Code injected by live-server -->
+<script type="text/javascript">
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+</body></html>
