@@ -10,13 +10,15 @@ export default {
             <input type="text" placeholder="Book Name" v-model="filterBy.byName" />
             Price from: 
             <input class="number-input" type="number" v-model.number="filterBy.fromPrice" />
+            to: 
+            <input class="number-input" type="number" v-model.number="filterBy.toPrice" />
             <button>Filter</button>
         </form>
     </section>
     `,
     data() {
         return {
-            filterBy: {byName: '', fromPrice: 0}
+            filterBy: {byName: '', fromPrice: 0, toPrice: 10000}
         }
     },
     methods: {
