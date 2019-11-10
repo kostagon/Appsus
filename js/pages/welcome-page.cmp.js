@@ -6,7 +6,7 @@ export default {
         <section class="welcome-page-container animated fadeInLeft">
             <div>
                 <h1>Welcome!</h1>
-                <img src="//im4.ezgif.com/tmp/ezgif-4-a17ad8084d9a.gif"/>
+                <img width="130px" src="//im4.ezgif.com/tmp/ezgif-4-a17ad8084d9a.gif"/>
             </div>
         </section>
     `
