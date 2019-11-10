@@ -1,10 +1,20 @@
-.book-app-container .add-book-btn {
-    border: 2px solid #36a097;
+.book-app-container{
     padding: 10px;
-    background-color: white;
+}
+
+.book-app-container input {
+    margin-right: 10px;
+}
+
+
+
+.book-app-container .add-book-btn {
+    border: 2px solid rgb(82, 175, 102);
+    padding: 10px;
     border-radius: 15px;
     margin: 0 auto;
     display: block;
     width: 105px;
     text-align: center;
+    padding: 7px;
 }

@@ -89,6 +89,7 @@ function saveEmailAndStore(subject, body, from) {
     let email = createEmail(subject, body, from, true);
     gEmails.unshift(email);
     storageService.store(EMAILS_KEY, gEmails);
+    return Promise.resolve(email);
 }
 
 function onSaveCurrEmail(email){

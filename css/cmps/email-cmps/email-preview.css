@@ -7,6 +7,10 @@
     width: 33%;
 }
 
+.email-preview-container label {
+    cursor: pointer;
+}
+
 .email-preview-container:hover {
     background-color: #3b4452;
 }

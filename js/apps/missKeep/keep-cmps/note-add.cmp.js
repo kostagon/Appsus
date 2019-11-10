@@ -8,7 +8,7 @@ export default {
     template: `
     <section class="notes-add-container">
         <form @submit.prevent="submit">
-            <input type="text" class="note-input" v-model="userNote" :keyup.enter="submit" :placeholder="inputPlaceholder"></input>
+            <input type="text" class="note-input" v-model="userNote" :keyup.enter="submit" :placeholder="inputPlaceholder" />
             <i class="fas fa-font" @click="updateInput('Enter note here..','noteTxt')" :class="noteInputClass('noteTxt')"></i>
             <i class="far fa-image" @click="updateInput('Enter image url..','noteImg')" :class="noteInputClass('noteImg')"></i>
             <i class="fas fa-video" @click="updateInput('Enter video url..','noteVid')" :class="noteInputClass('noteVid')"></i>
