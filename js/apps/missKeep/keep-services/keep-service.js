@@ -9,10 +9,22 @@ export const keepService = {
     createNote,
     removeNote,
     getNoteById,
-    editNote
+    editNote,
+    getVidUrl
 }
 
 const KEEP_KEY = 'notes';
+
+function getVidUrl(url) {
+    var regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+    var match = url.match(regExp);
+
+    if (match && match[2].length == 11) {
+        return '//www.youtube.com/embed/' + match[2];
+    } else {
+        return 'error';
+    }
+}
 
 function editNote(note, newInfo) {
     switch (note.type) {
@@ -90,7 +102,7 @@ function createNote(type, val) {
         type,
         info: {
             [valKey]: val,
-            style: { backgroundColor: '#ffffff' },
+            style: { backgroundColor: 'transparent' },
             isPinned: false
         }
     }
@@ -104,7 +116,7 @@ var gNotes = [
         id: makeId(),
         info: {
             txt: 'please work please',
-            style: { backgroundColor: 'lightcyan' },
+            style: { backgroundColor: '' },
             isPinned: true
         }
     },
@@ -139,7 +151,16 @@ var gNotes = [
         id: makeId(),
         info: {
             style: { backgroundColor: '' },
-            vidUrl: '//vjs.zencdn.net/v/oceans.mp4'
+            vidUrl: 'https://www.youtube.com/watch?v=hS5CfP8n_js'
+        }
+    },
+    {
+        type: 'noteVid',
+        id: makeId(),
+        info: {
+            isPinned: true,
+            style: { backgroundColor: '' },
+            vidUrl: 'https://www.youtube.com/watch?v=zd7q58dyUDs'
         }
     }
 ]

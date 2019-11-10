@@ -13,10 +13,17 @@ export const emailService = {
     updateProp,
     getEmptyEmail,
     saveEmailAndStore,
-    onSaveCurrEmail
+    onSaveCurrEmail,
+    getNoteFromStorage
 }
 var gEmails = []
 const EMAILS_KEY = 'emails';
+const NOTE_KEY = 'note';
+
+function getNoteFromStorage(){
+    var data = storageService.load(NOTE_KEY);
+    return Promise.resolve(data)
+}
 
 function getEmailById(emailId) {
     const res = gEmails.find(email => {

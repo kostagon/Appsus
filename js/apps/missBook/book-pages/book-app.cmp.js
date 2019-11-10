@@ -10,16 +10,21 @@ export default {
     template: `
         <section class="book-app-container">
             <book-filter @filtered="setFilter"></book-filter> 
-            <router-link to="/add" class="add-book-btn">Add Book</router-link>
+            <button class="add-book-btn" @click="isAdding = !isAdding">
+                <router-link to="/book/add">
+                    Add Book
+                </router-link>
+            </button>
             <router-view></router-view>
-            <book-list :books="booksToShow" @selected="selectBook"></book-list>
+            <book-list v-if="!isAdding" :books="booksToShow" @selected="selectBook"></book-list>
         </section>
     `,
     data() {
         return {
             books: [],
             filterBy: null,
-            selectedBook: null
+            selectedBook: null,
+            isAdding: false
         }
     },
     methods: {

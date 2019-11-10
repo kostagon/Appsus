@@ -11,48 +11,52 @@ import emailDetails from './apps/mrEmail/pages/email-details.cmp.js';
 
 
 const routes = [{
-        path: '/',
-        component: welcomePage
-    },
-    {
-        path: '/about',
-        component: aboutPage
-    },
-    {
-        path: '/keep',
-        component: keepApp
-    },
-    {
-        path: '/email/',
-        component: emailApp,
-        children: [{
-                path: 'compose/:id?',
-                component: emailCompose
-            },
-            {
-                path: '',
-                component: emailList
-            },
-            {
-                path: ':id',
-                component: emailDetails
-            },
-        ]
-    },
-    {
-        path: '/book',
-        component: bookApp,
-        children: [{
-                path: ':id',
-                component: bookDetails
-            }
-        ]
-    },
-    {
-        path: '/add',
-        component: bookAdd
-    }
-]
+    path: '/',
+    component: welcomePage
+},
+{
+    path: '/about',
+    component: aboutPage
+},
+{
+    path: '/keep',
+    component: keepApp
+},
+{
+    path: '/email/',
+    component: emailApp,
+    children: [
+        {
+            path: 'compose/:id?',
+            component: emailCompose
+        },
+
+        {
+            path: '',
+            component: emailList
+        },
+        {
+            path: ':id',
+            component: emailDetails
+        },
+    ]
+},
+{
+    path: '/book/',
+    component: bookApp,
+    children: [
+        {
+            path: 'add',
+            component: bookAdd
+        },
+        {
+            path: ':id',
+            component: bookDetails
+        },
+
+    ]
+}]
+
 
 const router = new VueRouter({
     routes

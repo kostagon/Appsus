@@ -1,8 +1,6 @@
 import { keepService } from '../../keep-services/keep-service.js';
 import { eventBus } from '../../../../services/eventbus-service.js';
 import noteEdit from '../note-edit.cmp.js';
-import noteMail from '../note-mail.cmp.js';
-import { emailService } from '../../../mrEmail/services/email.service.js';
 
 export default {
     name: 'vid-note',
@@ -13,22 +11,21 @@ export default {
         :style="activeColor"
     >
 
-        <div class="video-player">
-            <video class="video" ref="video">
-                <source :src="note.info.vidUrl" type="video/mp4" />
-            </video>
-        </div>
+        <iframe :src="getVidUrl" frameborder="0" allowfullscreen></iframe>
 
         <div class="editBar flex column space-around">
 
             <note-edit v-if="editMode" :note="note" @cancel="cancelEditMode" @save="saveNote"></note-edit>
-            <note-mail v-if="sendMailMode" :note="note" @cancelMail="cancelMailMode" @saveMail="sendAsMail"></note-mail>
+            
             <div class="icons-container flex space-around">
                 <i class="fas fa-video"></i>
                 <template v-if="hover">
 
                     <i class="fas fa-thumbtack" :class="{ pinned:note.info.isPinned }" @click="togglePinned"></i>
-                    <i class="far fa-paper-plane" @click="toggleMailMode"></i>
+                    <router-link :to="'/email/compose/' + stringifyURL">
+                        <i class="far fa-paper-plane"></i>
+                    </router-link>
+
                     <i class="fas fa-fill" @click="colorSelect = !colorSelect"></i>
 
                     <ul v-if="colorSelect" class="clean-list flex space-around color-container">
@@ -41,7 +38,6 @@ export default {
                     </ul>
                     <i class="fas fa-edit" @click="toggleEditMode"></i>
 
-                    
                     <i @click="removeNote(note.id)" class="fas fa-trash-alt"></i>
                 </template>
             </div>
@@ -53,12 +49,8 @@ export default {
         return {
             hover: false,
             colorSelect: false,
-            editMode: false,
-			sendMailMode: false
+            editMode: false
         }
-    },
-    mounted() {
-        this.videoElement.controls = true;
     },
     computed: {
         activeColor() {
@@ -66,23 +58,24 @@ export default {
                 backgroundColor: this.note.info.style.backgroundColor
             }
         },
-        videoElement() {
-            return this.$refs.video;
+        getVidUrl(){
+            var url = this.note.info.vidUrl;
+            return keepService.getVidUrl(url);
+        },
+        stringifyURL() {
+            var data = this.note.info.vidUrl;
+            var url = encodeURIComponent(JSON.stringify(data));
+            return url;
         }
     },
     methods: {
-        toggleMailMode(){
-			this.sendMailMode = !this.sendMailMode;
-			this.editMode = false;
-		},
-		toggleEditMode(){
-			this.editMode = !this.editMode;
-			this.sendMailMode = false;
-		},
+        toggleEditMode() {
+            this.editMode = !this.editMode;
+        },
         togglePinned() {
-			this.note.info.isPinned = !this.note.info.isPinned;
-			keepService.saveNote(this.note);
-		},
+            this.note.info.isPinned = !this.note.info.isPinned;
+            keepService.saveNote(this.note);
+        },
         removeNote(noteId) {
             keepService.removeNote(noteId)
                 .then(() => {
@@ -115,16 +108,9 @@ export default {
         saveNote(newInfo) {
             this.editMode = false;
             keepService.editNote(this.note, newInfo);
-        },
-        sendAsMail(newMail) {
-			emailService.saveEmailAndStore(newMail.subject, newMail.info, newMail.from)
-        },
-        cancelMailMode() {
-			this.sendMailMode = false;
-		}
+        }
     },
     components: {
-        noteEdit,
-		noteMail
+        noteEdit
     }
 }

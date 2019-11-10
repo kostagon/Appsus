@@ -1,12 +1,10 @@
 import { keepService } from '../../keep-services/keep-service.js';
 import { eventBus } from '../../../../services/eventbus-service.js';
 import noteEdit from '../note-edit.cmp.js';
-import noteMail from '../note-mail.cmp.js';
+
+// import noteMail from '../note-mail.cmp.js';
+
 import '../../../../cmps/long-text.cmp.js';
-
-
-import { emailService } from '../../../mrEmail/services/email.service.js';
-
 
 export default {
 	name: 'txt-note',
@@ -21,14 +19,16 @@ export default {
 		<div class="editBar flex column space-around">
 
 			<note-edit v-if="editMode" :note="note" @cancel="cancelEditMode" @save="saveNote"></note-edit>
-			<note-mail v-if="sendMailMode" :note="note" @cancelMail="cancelMailMode" @saveMail="sendAsMail"></note-mail>
-
+			
 			<div class="icons-container flex space-around">
 				<i class="fas fa-font"></i>
 				<template v-if="hover">
 
 					<i class="fas fa-thumbtack" :class="{ pinned:note.info.isPinned }" @click="togglePinned"></i>
-					<i class="far fa-paper-plane" @click="toggleMailMode"></i>
+					
+					<router-link :to="'/email/compose/' + stringifyURL">
+                        <i class="far fa-paper-plane"></i>
+                    </router-link>
 					
 					<i class="fas fa-fill" @click="colorSelect = !colorSelect"></i>
 					<ul v-if="colorSelect" class="clean-list flex space-around color-container">
@@ -55,7 +55,7 @@ export default {
 			hover: false,
 			colorSelect: false,
 			editMode: false,
-			sendMailMode: false
+			// sendMailMode: false
 		}
 	},
 	computed: {
@@ -64,18 +64,15 @@ export default {
 				backgroundColor: this.note.info.style.backgroundColor
 			}
 		},
+		stringifyURL() {
+            var data = this.note.info.txt;
+            var url = encodeURIComponent(JSON.stringify(data));
+            return url;
+        }
 	},
 	methods: {
-		toggleMailMode(){
-			this.sendMailMode = !this.sendMailMode;
-			this.editMode = false;
-		},
-		toggleEditMode(){
+		toggleEditMode() {
 			this.editMode = !this.editMode;
-			this.sendMailMode = false;
-		},
-		sendAsMail(newMail) {
-			emailService.saveEmailAndStore(newMail.subject, newMail.info, newMail.from)
 		},
 		togglePinned() {
 			this.note.info.isPinned = !this.note.info.isPinned;
@@ -113,13 +110,9 @@ export default {
 		saveNote(newInfo) {
 			this.editMode = false;
 			keepService.editNote(this.note, newInfo);
-		},
-		cancelMailMode() {
-			this.sendMailMode = false;
-		},
+		}
 	},
 	components: {
-		noteEdit,
-		noteMail
+		noteEdit
 	}
 };

@@ -49,9 +49,11 @@ export default {
     },
     created() {
         let currId = this.$route.params.id;
+
         if (currId) {
             emailService.getEmailById(currId)
                 .then((email) => {
+                    if (!email) return
                     this.isReply = true;
                     let strEmail = JSON.stringify(email);
                     let newEmail = JSON.parse(strEmail);
@@ -61,5 +63,10 @@ export default {
                     this.newMail = newEmail;
                 })
         }
+    },
+    mounted() {
+        let param = this.$route.params.id;
+        param = JSON.parse(param);
+        this.newMail.body = param;
     }
 }

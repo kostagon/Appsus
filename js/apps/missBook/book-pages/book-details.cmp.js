@@ -1,9 +1,9 @@
 'use strict';
 
 import { bookService } from '../book.service.js';
-import '../../../cmps/long-text.cmp.js';
 import { eventBus } from '../../../services/eventbus-service.js';
 import reviewAdd from '../books-cmps/review-add.cmp.js'
+import '../../../cmps/long-text.cmp.js';
 
 export default {
     name: 'book-details',
@@ -70,6 +70,7 @@ export default {
     },
     methods: {
         loadBook() {
+            debugger;
             this.bookId = this.$route.params.id;
             bookService.getBookById(this.bookId)
                 .then(book => {
@@ -127,5 +128,3 @@ export default {
         reviewAdd
     }
 }
-
-
