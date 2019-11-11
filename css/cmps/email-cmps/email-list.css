@@ -4,6 +4,10 @@
     overflow-y: auto;
 }
 
+.email-list-container::-webkit-scrollbar {
+    display: none;
+}
+
 @media (max-width: 740px) {
     .email-list-container {
         overflow-y: unset;
