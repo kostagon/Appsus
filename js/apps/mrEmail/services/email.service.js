@@ -72,7 +72,6 @@ function getEmails() {
             createEmail('Want to buy my shit?', 'it is very high quality?', 'Poopi'),
             createEmail('Come come', '?W?a?s?s?u?p?', 'Dicky'),
             createEmail('Beauty school', 'Push back the square', 'Chino'),
-            createEmail('What is going on', '...', 'Chi Cheng (R.I.P)'),
             createEmail('Are you high?', 'Fabulous site!', 'Melissa'),
             createEmail('Lorem ipsum', 'Ma kore ahi?', 'Geva'),
             createEmail('Dolor sit amet', '??', 'Patrick'),
